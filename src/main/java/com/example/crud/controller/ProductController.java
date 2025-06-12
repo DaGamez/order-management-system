@@ -31,15 +31,14 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    // Get a product by ID
-    @GetMapping("/{id}")
+    // Get a product by ID    @GetMapping("/{id}")
     public ResponseEntity<?> getProductById(@PathVariable Long id) {
         return productService.getProductById(id)
-                .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
+                .map(product -> new ResponseEntity<Object>(product, HttpStatus.OK))
                 .orElseGet(() -> {
                     Map<String, String> error = new HashMap<>();
                     error.put("message", "Product not found with id: " + id);
-                    return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+                    return new ResponseEntity<Object>(error, HttpStatus.NOT_FOUND);
                 });
     }
 

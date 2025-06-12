@@ -1,3 +1,4 @@
+com\example\crud\controller\ProductController.class
 com\example\crud\config\DataInitializer.class
 com\example\crud\model\Product.class
 com\example\crud\service\ProductServiceImpl.class
