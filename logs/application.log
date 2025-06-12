@@ -1,0 +1,32 @@
+2025-06-12 13:19:24 [restartedMain] INFO  com.example.crud.CrudApplication - Starting CrudApplication using Java 17.0.12 on DanielG with PID 996 (C:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes started by dagam in C:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot)
+2025-06-12 13:19:24 [restartedMain] DEBUG com.example.crud.CrudApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+2025-06-12 13:19:24 [restartedMain] INFO  com.example.crud.CrudApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-12 13:19:24 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-12 13:19:24 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-12 13:19:24 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-12 13:19:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interfaces.
+2025-06-12 13:19:25 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-06-12 13:19:25 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-12 13:19:25 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-12 13:19:25 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-12 13:19:25 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-12 13:19:25 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1217 ms
+2025-06-12 13:19:25 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-12 13:19:26 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-12 13:19:26 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-12 13:19:26 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@d1e98ed, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55edbe98, org.springframework.security.web.context.SecurityContextPersistenceFilter@2649244, org.springframework.security.web.header.HeaderWriterFilter@7e371571, org.springframework.security.web.authentication.logout.LogoutFilter@375a7a84, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7f3dfd97, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@502189a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32f9a2f7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54dada13, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9dd713a, org.springframework.security.web.session.SessionManagementFilter@5dc3a674, org.springframework.security.web.access.ExceptionTranslationFilter@5c92ad68, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@149dbdfa]
+2025-06-12 13:19:26 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-12 13:19:27 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-12 13:19:27 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-12 13:19:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-12 13:19:27 [restartedMain] INFO  com.example.crud.CrudApplication - Started CrudApplication in 3.208 seconds (JVM running for 3.617)
+2025-06-12 13:19:27 [restartedMain] INFO  c.e.crud.config.DataInitializer - Data initialization started...
+2025-06-12 13:19:27 [restartedMain] INFO  c.e.crud.config.DataInitializer - Populating database with sample products
+2025-06-12 13:19:27 [restartedMain] INFO  c.e.crud.config.DataInitializer - Database initialized with 10 products
+2025-06-12 13:19:27 [restartedMain] INFO  c.e.crud.config.DataInitializer - Data initialization completed
+2025-06-12 13:20:00 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-12 13:20:00 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-12 13:20:00 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-12 13:25:06 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-12 13:25:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-12 13:25:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
