@@ -1,0 +1,10 @@
+com\example\crud\config\DataInitializer.class
+com\example\crud\model\Product.class
+com\example\crud\service\ProductServiceImpl.class
+com\example\crud\exception\GlobalExceptionHandler.class
+com\example\crud\controller\WebController.class
+com\example\crud\config\SecurityConfig.class
+com\example\crud\CrudApplication.class
+com\example\crud\controller\LoginController.class
+com\example\crud\repository\ProductRepository.class
+com\example\crud\service\ProductService.class
