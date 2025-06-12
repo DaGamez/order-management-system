@@ -1,0 +1,12 @@
+# Logging configuration
+logging.level.root=INFO
+logging.level.com.example.crud=DEBUG
+logging.level.org.springframework.web=INFO
+logging.level.org.hibernate=ERROR
+
+# Set pattern for console logging
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+
+# Log file configuration
+logging.file.name=logs/application.log
+logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
