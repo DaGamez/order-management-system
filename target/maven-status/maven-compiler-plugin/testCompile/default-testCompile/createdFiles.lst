@@ -1,2 +1,3 @@
 com\example\crud\CrudApplicationTests.class
+com\example\crud\service\UserServiceTest.class
 com\example\crud\controller\ProductControllerTest.class

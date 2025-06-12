@@ -21,6 +21,8 @@ Include these credentials with each request to authenticate.
 
 ## Endpoints
 
+### Products
+
 ### Get All Products
 
 Retrieves a list of all products.
@@ -280,3 +282,80 @@ curl -X GET "http://localhost:8080/api/products/filter/price-greater-than?price=
   }
 ]
 ```
+
+### User Management
+
+> Note: User management is only accessible to users with ADMIN role.
+
+#### Get All Users
+
+Retrieves a list of all users.
+
+**URL**: `/users` (Web Interface)
+
+**Method**: `GET`
+
+**Required Role**: `ADMIN`
+
+**Response**: Returns the user management page with a list of all users.
+
+#### Add New User
+
+Shows the form to create a new user.
+
+**URL**: `/users/new` (Web Interface)
+
+**Method**: `GET`
+
+**Required Role**: `ADMIN`
+
+**Response**: Returns the user form page.
+
+#### Save User
+
+Creates a new user or updates an existing user.
+
+**URL**: `/users/save` (Web Interface)
+
+**Method**: `POST`
+
+**Required Role**: `ADMIN`
+
+**Form Data**:
+- id (null for new users)
+- username (required, unique)
+- password (required for new users)
+- roles (optional, multiple checkboxes)
+- enabled (boolean)
+
+**Response**: Redirects to the user management page with a success message.
+
+#### Edit User
+
+Shows the form to edit an existing user.
+
+**URL**: `/users/edit/{id}` (Web Interface)
+
+**Method**: `GET`
+
+**Required Role**: `ADMIN`
+
+**Path Parameters**:
+- id (required): The ID of the user to edit.
+
+**Response**: Returns the user form page with user data pre-filled.
+
+#### Delete User
+
+Deletes an existing user.
+
+**URL**: `/users/delete/{id}` (Web Interface)
+
+**Method**: `GET`
+
+**Required Role**: `ADMIN`
+
+**Path Parameters**:
+- id (required): The ID of the user to delete.
+
+**Response**: Redirects to the user management page with a success message.

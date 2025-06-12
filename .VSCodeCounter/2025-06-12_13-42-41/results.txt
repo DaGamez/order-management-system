@@ -1,0 +1,123 @@
+Date : 2025-06-12 13:42:41
+Directory : c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot
+Total : 47 files,  2819 codes, 104 comments, 600 blanks, all 3523 lines
+
+Languages
++--------------+------------+------------+------------+------------+------------+
+| language     | files      | code       | comment    | blank      | total      |
++--------------+------------+------------+------------+------------+------------+
+| Java         |         20 |        994 |         61 |        275 |      1,330 |
+| HTML         |         12 |        744 |          8 |         82 |        834 |
+| Markdown     |          2 |        391 |          0 |        140 |        531 |
+| PostCSS      |          2 |        324 |         20 |         64 |        408 |
+| XML          |          3 |        126 |          0 |         13 |        139 |
+| Log          |          1 |         94 |          0 |          1 |         95 |
+| JavaScript   |          2 |         58 |          8 |          6 |         72 |
+| Batch        |          1 |         33 |          1 |          6 |         40 |
+| Shell Script |          1 |         28 |          2 |          6 |         36 |
+| Properties   |          3 |         27 |          4 |          7 |         38 |
++--------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                            | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                               |         47 |      2,819 |        104 |        600 |      3,523 |
+| . (Files)                                                                                                                       |          5 |        526 |          3 |        157 |        686 |
+| logs                                                                                                                            |          1 |         94 |          0 |          1 |         95 |
+| src                                                                                                                             |         30 |      1,595 |         81 |        358 |      2,034 |
+| src\main                                                                                                                        |         27 |      1,383 |         47 |        294 |      1,724 |
+| src\main\java                                                                                                                   |         17 |        782 |         27 |        211 |      1,020 |
+| src\main\java\com                                                                                                               |         17 |        782 |         27 |        211 |      1,020 |
+| src\main\java\com\example                                                                                                       |         17 |        782 |         27 |        211 |      1,020 |
+| src\main\java\com\example\crud                                                                                                  |         17 |        782 |         27 |        211 |      1,020 |
+| src\main\java\com\example\crud (Files)                                                                                          |          1 |          9 |          0 |          4 |         13 |
+| src\main\java\com\example\crud\config                                                                                           |          2 |        102 |          5 |         24 |        131 |
+| src\main\java\com\example\crud\controller                                                                                       |          4 |        263 |         11 |         49 |        323 |
+| src\main\java\com\example\crud\exception                                                                                        |          1 |         63 |          1 |         14 |         78 |
+| src\main\java\com\example\crud\model                                                                                            |          2 |        149 |          5 |         44 |        198 |
+| src\main\java\com\example\crud\repository                                                                                       |          2 |         21 |          3 |         12 |         36 |
+| src\main\java\com\example\crud\service                                                                                          |          5 |        175 |          2 |         64 |        241 |
+| src\main\resources                                                                                                              |         10 |        601 |         20 |         83 |        704 |
+| src\main\resources (Files)                                                                                                      |          2 |         38 |          2 |          7 |         47 |
+| src\main\resources\static                                                                                                       |          2 |        191 |         14 |         35 |        240 |
+| src\main\resources\static\css                                                                                                   |          1 |        162 |         10 |         32 |        204 |
+| src\main\resources\static\js                                                                                                    |          1 |         29 |          4 |          3 |         36 |
+| src\main\resources\templates                                                                                                    |          6 |        372 |          4 |         41 |        417 |
+| src\main\resources\templates (Files)                                                                                            |          2 |        106 |          0 |         16 |        122 |
+| src\main\resources\templates\products                                                                                           |          2 |        129 |          4 |         13 |        146 |
+| src\main\resources\templates\users                                                                                              |          2 |        137 |          0 |         12 |        149 |
+| src\test                                                                                                                        |          3 |        212 |         34 |         64 |        310 |
+| src\test\java                                                                                                                   |          3 |        212 |         34 |         64 |        310 |
+| src\test\java\com                                                                                                               |          3 |        212 |         34 |         64 |        310 |
+| src\test\java\com\example                                                                                                       |          3 |        212 |         34 |         64 |        310 |
+| src\test\java\com\example\crud                                                                                                  |          3 |        212 |         34 |         64 |        310 |
+| src\test\java\com\example\crud (Files)                                                                                          |          1 |          9 |          0 |          4 |         13 |
+| src\test\java\com\example\crud\controller                                                                                       |          1 |         90 |         12 |         26 |        128 |
+| src\test\java\com\example\crud\service                                                                                          |          1 |        113 |         22 |         34 |        169 |
+| target                                                                                                                          |         11 |        604 |         20 |         84 |        708 |
+| target\classes                                                                                                                  |         10 |        601 |         20 |         83 |        704 |
+| target\classes (Files)                                                                                                          |          2 |         38 |          2 |          7 |         47 |
+| target\classes\static                                                                                                           |          2 |        191 |         14 |         35 |        240 |
+| target\classes\static\css                                                                                                       |          1 |        162 |         10 |         32 |        204 |
+| target\classes\static\js                                                                                                        |          1 |         29 |          4 |          3 |         36 |
+| target\classes\templates                                                                                                        |          6 |        372 |          4 |         41 |        417 |
+| target\classes\templates (Files)                                                                                                |          2 |        106 |          0 |         16 |        122 |
+| target\classes\templates\products                                                                                               |          2 |        129 |          4 |         13 |        146 |
+| target\classes\templates\users                                                                                                  |          2 |        137 |          0 |         12 |        149 |
+| target\maven-archiver                                                                                                           |          1 |          3 |          0 |          1 |          4 |
++---------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| filename                                                                                                                        | language     | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\API_DOCUMENTATION.md                                                 | Markdown     |        258 |          0 |        104 |        362 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\README.md                                                            | Markdown     |        133 |          0 |         36 |        169 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\logs\application.log                                                 | Log          |         94 |          0 |          1 |         95 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\pom.xml                                                              | XML          |         74 |          0 |          5 |         79 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\run.bat                                                              | Batch        |         33 |          1 |          6 |         40 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\run.sh                                                               | Shell Script |         28 |          2 |          6 |         36 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\CrudApplication.java                  | Java         |          9 |          0 |          4 |         13 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\config\DataInitializer.java           | Java         |         57 |          5 |         16 |         78 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\config\SecurityConfig.java            | Java         |         45 |          0 |          8 |         53 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\controller\LoginController.java       | Java         |         10 |          0 |          4 |         14 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\controller\ProductController.java     | Java         |         79 |          8 |         14 |        101 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\controller\UserController.java        | Java         |         89 |          3 |         15 |        107 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\controller\WebController.java         | Java         |         85 |          0 |         16 |        101 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\exception\GlobalExceptionHandler.java | Java         |         63 |          1 |         14 |         78 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\model\Product.java                    | Java         |         74 |          3 |         22 |         99 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\model\User.java                       | Java         |         75 |          2 |         22 |         99 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\repository\ProductRepository.java     | Java         |         11 |          3 |          6 |         20 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\repository\UserRepository.java        | Java         |         10 |          0 |          6 |         16 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\service\CustomUserDetailsService.java | Java         |         34 |          0 |          8 |         42 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\service\ProductService.java           | Java         |         14 |          0 |         11 |         25 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\service\ProductServiceImpl.java       | Java         |         55 |          0 |         17 |         72 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\service\UserService.java              | Java         |         13 |          0 |         11 |         24 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\service\UserServiceImpl.java          | Java         |         59 |          2 |         17 |         78 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\application.properties                            | Properties   |         12 |          2 |          3 |         17 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\logback.xml                                       | XML          |         26 |          0 |          4 |         30 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\static\css\style.css                              | PostCSS      |        162 |         10 |         32 |        204 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\static\js\script.js                               | JavaScript   |         29 |          4 |          3 |         36 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\error.html                              | HTML         |         38 |          0 |          7 |         45 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\login.html                              | HTML         |         68 |          0 |          9 |         77 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\products\form.html                      | HTML         |         54 |          0 |          7 |         61 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\products\list.html                      | HTML         |         75 |          4 |          6 |         85 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\users\form.html                         | HTML         |         68 |          0 |          8 |         76 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\users\list.html                         | HTML         |         69 |          0 |          4 |         73 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\test\java\com\example\crud\CrudApplicationTests.java             | Java         |          9 |          0 |          4 |         13 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\test\java\com\example\crud\controller\ProductControllerTest.java | Java         |         90 |         12 |         26 |        128 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\test\java\com\example\crud\service\UserServiceTest.java          | Java         |        113 |         22 |         34 |        169 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\application.properties                                | Properties   |         12 |          2 |          3 |         17 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\logback.xml                                           | XML          |         26 |          0 |          4 |         30 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\static\css\style.css                                  | PostCSS      |        162 |         10 |         32 |        204 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\static\js\script.js                                   | JavaScript   |         29 |          4 |          3 |         36 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\error.html                                  | HTML         |         38 |          0 |          7 |         45 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\login.html                                  | HTML         |         68 |          0 |          9 |         77 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\products\form.html                          | HTML         |         54 |          0 |          7 |         61 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\products\list.html                          | HTML         |         75 |          4 |          6 |         85 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\users\form.html                             | HTML         |         68 |          0 |          8 |         76 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\users\list.html                             | HTML         |         69 |          0 |          4 |         73 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\maven-archiver\pom.properties                                 | Properties   |          3 |          0 |          1 |          4 |
+| Total                                                                                                                           |              |      2,819 |        104 |        600 |      3,523 |
++---------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+

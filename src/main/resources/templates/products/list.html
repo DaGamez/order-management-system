@@ -9,11 +9,13 @@
 <body>
     <header class="header">
         <h1>Product Management System</h1>
-    </header>
-      <nav class="navbar">
+    </header>      <nav class="navbar">
         <ul>
             <li><a th:href="@{/products}">Products</a></li>
             <li><a th:href="@{/products/new}">Add New Product</a></li>
+            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <a th:href="@{/users}">User Management</a>
+            </li>
             <li style="margin-left: auto;">
                 <form th:action="@{/logout}" method="post" style="display:inline;">
                     <span th:text="${#authentication.name}"></span>

@@ -5,6 +5,8 @@ A simple CRUD (Create, Read, Update, Delete) application built using Spring Boot
 ## Features
 
 - Product management with CRUD operations
+- User management for administrators
+- Role-based access control
 - REST API endpoints
 - Web UI using Thymeleaf
 - Form validations
@@ -81,6 +83,40 @@ A simple CRUD (Create, Read, Update, Delete) application built using Spring Boot
 | /products/edit/{id}    | Show form to edit a product            |
 | /products/delete/{id}  | Delete a product                       |
 | /products/search?name={keyword} | Search products by name        |
+
+## User Management
+
+The application now includes a user management system that allows administrators to:
+
+- View a list of all users
+- Add new users with different roles (USER, ADMIN, API_USER)
+- Edit existing users (username, password, roles, enable/disable account)
+- Delete users
+
+### Default Users
+
+The application comes with three default users:
+
+1. Regular User:
+   - Username: user
+   - Password: password
+   - Role: USER
+
+2. Admin User:
+   - Username: admin
+   - Password: admin
+   - Roles: USER, ADMIN
+
+3. API User:
+   - Username: api
+   - Password: api123
+   - Role: API_USER
+
+### Access Control
+
+- Only users with the ADMIN role can access the user management interface
+- The user management interface is accessible via the navigation menu (only visible to admins)
+- RESTful API endpoints are only accessible to users with the API_USER role
 
 ## Running Tests
 
