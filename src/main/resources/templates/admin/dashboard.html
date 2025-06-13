@@ -97,19 +97,32 @@
         .tab-content {
             display: none;
         }
-        
-        .tab-content.active {
+          .tab-content.active {
             display: block;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Admin Dashboard</h1>
+    <div class="container">        <h1>Admin Dashboard</h1>
         <div class="navigation-links">
             <a th:href="@{/products}" class="btn btn-secondary">Back to Products</a>
             <a th:href="@{/admin/logs}" class="btn btn-secondary">View System Logs</a>
         </div>
+        
+        <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
         
         <div class="dashboard-controls">
             <div class="dashboard-tabs">
@@ -139,10 +152,9 @@
                     <div class="stat-label">Average Queries</div>
                     <div class="stat-value" th:text="${queriesByDay.size() > 0 ? #aggregates.sum(queriesByDay.values()) / queriesByDay.size() : 0}">0</div>
                     <div class="stat-label">per day</div>
-                </div>
-                <div class="stat-card">
+                </div>                <div class="stat-card">
                     <div class="stat-label">Most Active Day</div>
-                    <div class="stat-value" th:text="${queriesByDay.isEmpty() ? 'N/A' : #maps.highestEntry(queriesByDay).key}">N/A</div>
+                    <div class="stat-value" id="mostActiveDay">N/A</div>
                 </div>
             </div>
             
@@ -177,10 +189,22 @@
         const queriesByDay = /*[[${queriesByDay}]]*/ {};
         const queriesByType = /*[[${queriesByType}]]*/ {};
         const queriesByHour = /*[[${queriesByHour}]]*/ {};
-        
-        // Prepare data for charts
+          // Prepare data for charts
         const dayLabels = Object.keys(queriesByDay);
         const dayData = Object.values(queriesByDay);
+        
+        // Find the most active day
+        if (dayLabels.length > 0) {
+            let maxCount = 0;
+            let maxDay = '';
+            dayLabels.forEach((day, index) => {
+                if (dayData[index] > maxCount) {
+                    maxCount = dayData[index];
+                    maxDay = day;
+                }
+            });
+            document.getElementById('mostActiveDay').textContent = maxDay;
+        }
         
         const typeLabels = Object.keys(queriesByType);
         const typeData = Object.values(queriesByType);

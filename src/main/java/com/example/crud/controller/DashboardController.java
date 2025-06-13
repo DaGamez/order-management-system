@@ -3,6 +3,7 @@ package com.example.crud.controller;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,7 @@ public class DashboardController {
     @Autowired
     public DashboardController(UserQueryService userQueryService) {
         this.userQueryService = userQueryService;
-    }
-
-    @GetMapping
+    }    @GetMapping
     public String showDashboard(
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
@@ -43,10 +42,24 @@ public class DashboardController {
         LocalDateTime startDateTime = startDate.atStartOfDay();
         LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);
         
-        // Get query statistics
-        Map<String, Long> queriesByDay = userQueryService.getQueryCountByDay(startDateTime, endDateTime);
-        Map<String, Long> queriesByType = userQueryService.getQueryCountByType();
-        Map<Integer, Long> queriesByHour = userQueryService.getQueryCountByHour();
+        Map<String, Long> queriesByDay = new LinkedHashMap<>();
+        Map<String, Long> queriesByType = new LinkedHashMap<>();
+        Map<Integer, Long> queriesByHour = new LinkedHashMap<>();
+        
+        try {
+            // Get query statistics
+            queriesByDay = userQueryService.getQueryCountByDay(startDateTime, endDateTime);
+            queriesByType = userQueryService.getQueryCountByType();
+            queriesByHour = userQueryService.getQueryCountByHour();
+              
+            // Ensure we have non-null maps even if no data exists
+            if (queriesByDay == null) queriesByDay = new LinkedHashMap<>();
+            if (queriesByType == null) queriesByType = new LinkedHashMap<>();
+            if (queriesByHour == null) queriesByHour = new LinkedHashMap<>();
+        } catch (Exception e) {
+            // If there's any error, log it and provide empty data
+            model.addAttribute("error", "An error occurred while retrieving dashboard data: " + e.getMessage());
+        }
         
         // Add data to model
         model.addAttribute("startDate", startDate);
