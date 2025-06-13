@@ -1042,3 +1042,7 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Prueba 2]
 2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Computador]
 2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [60.0]
+2025-06-12 20:05:31 [RMI TCP Connection(5)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-06-12 20:05:31 [RMI TCP Connection(5)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-12 20:05:31 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-12 20:05:31 [RMI TCP Connection(5)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
