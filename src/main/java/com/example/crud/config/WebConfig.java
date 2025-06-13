@@ -22,7 +22,11 @@ public class WebConfig implements WebMvcConfigurer {    @Override
                     double doubleValue = Double.parseDouble(text);
                     return (int) doubleValue;
                 }
-                return super.parse(text, locale);
+                try {
+                    return ((Number) super.parse(text, locale)).intValue();
+                } catch (java.text.ParseException e) {
+                    throw new RuntimeException("Failed to parse integer: " + text, e);
+                }
             }
         });
     }
