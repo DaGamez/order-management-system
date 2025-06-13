@@ -22,11 +22,12 @@ public class LogService {
     private static final Logger logger = LoggerFactory.getLogger(LogService.class);
     private static final String APPLICATION_LOG_PATH = "logs/application.log";
     private static final String DATABASE_LOG_PATH = "logs/database.log";
-    private static final String ARCHIVED_LOGS_DIR = "logs/archived/";
-
-    public enum LogType {
+    private static final String ARCHIVED_LOGS_DIR = "logs/archived/";    public enum LogType {
         APPLICATION,
-        DATABASE
+        DATABASE,
+        INFO,
+        WARNING,
+        ERROR
     }
 
     /**
@@ -113,6 +114,48 @@ public class LogService {
         } catch (IOException e) {
             logger.error("Error reading log file: {}", logFile, e);
             return Collections.emptyList();
+        }
+    }
+
+    /**
+     * Log an action with the specified log type and message
+     * @param logType The type of log entry (INFO, WARNING, ERROR)
+     * @param message The message to log
+     */
+    public void logAction(LogType logType, String message) {
+        switch (logType) {
+            case INFO:
+                logger.info(message);
+                break;
+            case WARNING:
+                logger.warn(message);
+                break;
+            case ERROR:
+                logger.error(message);
+                break;
+            default:
+                // For APPLICATION and DATABASE types, default to info level
+                logger.info(message);
+                break;
+        }
+        
+        // Also write to application log file for tracking
+        try {
+            Path logFile = Paths.get(APPLICATION_LOG_PATH);
+            // Ensure parent directories exist
+            if (!Files.exists(logFile.getParent())) {
+                Files.createDirectories(logFile.getParent());
+            }
+            // Append the log entry
+            String logEntry = String.format("[%s] %s: %s%n", 
+                    java.time.LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME),
+                    logType.name(),
+                    message);
+            Files.write(logFile, logEntry.getBytes(), 
+                    java.nio.file.StandardOpenOption.APPEND, 
+                    java.nio.file.StandardOpenOption.CREATE);
+        } catch (IOException e) {
+            logger.error("Failed to write to log file", e);
         }
     }
 }

@@ -47,8 +47,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order updateOrder(Order order) {
         if (!orderRepository.existsById(order.getId())) {
-            throw new EntityNotFoundException("Order not found with id: " + order.getId());
-        }
+            throw new EntityNotFoundException("Order not found with id: " + order.getId());        }
         Order updatedOrder = orderRepository.save(order);
         logService.logAction(LogService.LogType.INFO, "Order updated with ID: " + updatedOrder.getId());
         return updatedOrder;
