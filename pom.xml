@@ -12,10 +12,10 @@
     </parent>
     
     <groupId>com.example</groupId>
-    <artifactId>crud</artifactId>
+    <artifactId>order-management-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>crud</name>
-    <description>Simple CRUD application with Spring Boot and MySQL</description>
+    <description>Order Management System application with Spring Boot and MySQL</description>
     
     <properties>
         <java.version>11</java.version>

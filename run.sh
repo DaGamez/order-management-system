@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting Spring Boot CRUD Application..."
+echo "Starting Order Management System Application..."
 echo ""
 
 # Check if Maven is installed

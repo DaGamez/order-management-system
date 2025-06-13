@@ -1,10 +1,10 @@
-# Spring Boot CRUD Application
+# Order Management System
 
-A simple CRUD (Create, Read, Update, Delete) application built using Spring Boot and MySQL.
+A comprehensive Order Management System application built using Spring Boot and MySQL.
 
 ## Features
 
-- Product management with CRUD operations
+- Product management with full operations
 - User management for administrators
 - Role-based access control
 - REST API endpoints
@@ -36,10 +36,9 @@ A simple CRUD (Create, Read, Update, Delete) application built using Spring Boot
 2. **Configure MySQL Database**
 
    - Make sure MySQL is installed and running
-   - Create a database named `crud_db` (optional, the application will create it if it doesn't exist)
-   - Update the database configuration in `src/main/resources/application.properties` if needed:
-   ```
-   spring.datasource.url=jdbc:mysql://localhost:3306/crud_db?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+   - Create a database named `order_management_system_db` (optional, the application will create it if it doesn't exist)
+   - Update the database configuration in `src/main/resources/application.properties` if needed:   ```
+   spring.datasource.url=jdbc:mysql://localhost:3306/order_management_system_db?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
    spring.datasource.username=root
    spring.datasource.password=root
    ```

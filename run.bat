@@ -1,5 +1,5 @@
 @echo off
-echo Starting Spring Boot CRUD Application...
+echo Starting Order Management System Application...
 echo.
 
 REM Check if Maven is installed
