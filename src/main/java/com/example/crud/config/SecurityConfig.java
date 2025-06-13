@@ -29,6 +29,7 @@ public class SecurityConfig {
                 .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
                 .antMatchers("/api/**").hasRole("API_USER")
                 .antMatchers("/users/**").hasRole("ADMIN")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
             .and()
             .formLogin()

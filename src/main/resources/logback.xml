@@ -18,9 +18,36 @@
         </rollingPolicy>
     </appender>
     
+    <!-- Database logs specific configurations -->
+    <appender name="DB_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/database.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/database.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    
+    <!-- Loggers -->
     <logger name="com.example.crud" level="DEBUG"/>
     <logger name="org.springframework.web" level="INFO"/>
-    <logger name="org.hibernate" level="ERROR"/>
+    
+    <!-- Database related loggers -->
+    <logger name="org.hibernate" level="INFO">
+        <appender-ref ref="DB_FILE"/>
+    </logger>
+    <logger name="org.hibernate.SQL" level="DEBUG">
+        <appender-ref ref="DB_FILE"/>
+    </logger>
+    <logger name="org.hibernate.type.descriptor.sql" level="TRACE">
+        <appender-ref ref="DB_FILE"/>
+    </logger>
+    <logger name="org.springframework.jdbc.core" level="DEBUG">
+        <appender-ref ref="DB_FILE"/>
+    </logger>
     
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>

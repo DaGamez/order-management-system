@@ -1,0 +1,298 @@
+2025-06-12 20:03:58 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2025-06-12 20:03:59 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-12 20:03:59 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-06-12 20:04:00 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-06-12 20:04:00 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-06-12 20:04:00 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-06-12 20:04:01 [restartedMain] DEBUG org.hibernate.SQL - 
+    select
+        count(*) as col_0_0_ 
+    from
+        products product0_
+2025-06-12 20:04:01 [restartedMain] DEBUG org.hibernate.SQL - 
+    select
+        count(*) as col_0_0_ 
+    from
+        products product0_
+2025-06-12 20:04:01 [restartedMain] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([col_0_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:01 [restartedMain] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([col_0_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:01 [restartedMain] DEBUG org.hibernate.SQL - 
+    select
+        count(*) as col_0_0_ 
+    from
+        products product0_
+2025-06-12 20:04:01 [restartedMain] DEBUG org.hibernate.SQL - 
+    select
+        count(*) as col_0_0_ 
+    from
+        products product0_
+2025-06-12 20:04:01 [restartedMain] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([col_0_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:01 [restartedMain] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([col_0_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:01 [restartedMain] DEBUG org.hibernate.SQL - 
+    select
+        count(*) as col_0_0_ 
+    from
+        users user0_
+2025-06-12 20:04:01 [restartedMain] DEBUG org.hibernate.SQL - 
+    select
+        count(*) as col_0_0_ 
+    from
+        users user0_
+2025-06-12 20:04:01 [restartedMain] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([col_0_0_] : [BIGINT]) - [4]
+2025-06-12 20:04:01 [restartedMain] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([col_0_0_] : [BIGINT]) - [4]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        product0_.id as id1_0_,
+        product0_.created_at as created_2_0_,
+        product0_.description as descript3_0_,
+        product0_.name as name4_0_,
+        product0_.price as price5_0_ 
+    from
+        products product0_
+2025-06-12 20:04:04 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        product0_.id as id1_0_,
+        product0_.created_at as created_2_0_,
+        product0_.description as descript3_0_,
+        product0_.name as name4_0_,
+        product0_.price as price5_0_ 
+    from
+        products product0_
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [1]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [1]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [High-performance laptop with SSD]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [High-performance laptop with SSD]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Laptop]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Laptop]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [1200.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [1200.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [2]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [2]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Latest model with advanced camera]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Latest model with advanced camera]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Smartphone]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Smartphone]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [800.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [800.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [3]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [3]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [10-inch display with long battery life]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [10-inch display with long battery life]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Tablet]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Tablet]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [350.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [350.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [4]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [4]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [27-inch 4K display]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [27-inch 4K display]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Monitor]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Monitor]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [450.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [450.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [5]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [5]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Mechanical gaming keyboard]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Mechanical gaming keyboard]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Keyboard]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Keyboard]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [150.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [150.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [6]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [6]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Wireless ergonomic mouse]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Wireless ergonomic mouse]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Mouse]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Mouse]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [50.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [50.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [7]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [7]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Noise-cancelling wireless headphones]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Noise-cancelling wireless headphones]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Headphones]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Headphones]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [200.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [200.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [8]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [8]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [All-in-one printer with scanner]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [All-in-one printer with scanner]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Printer]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Printer]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [300.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [300.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [9]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [9]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [1TB portable storage]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [1TB portable storage]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [External Hard Drive]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [External Hard Drive]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [80.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [80.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [10]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [10]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [64GB high-speed USB 3.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [64GB high-speed USB 3.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [USB Flash Drive]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [USB Flash Drive]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [25.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [25.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:20:49.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:20:49.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Prueba 2]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Prueba 2]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Computador]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Computador]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [60.0]
+2025-06-12 20:04:04 [http-nio-8080-exec-1] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [60.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        product0_.id as id1_0_,
+        product0_.created_at as created_2_0_,
+        product0_.description as descript3_0_,
+        product0_.name as name4_0_,
+        product0_.price as price5_0_ 
+    from
+        products product0_
+2025-06-12 20:04:39 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        product0_.id as id1_0_,
+        product0_.created_at as created_2_0_,
+        product0_.description as descript3_0_,
+        product0_.name as name4_0_,
+        product0_.price as price5_0_ 
+    from
+        products product0_
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [1]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [1]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [High-performance laptop with SSD]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [High-performance laptop with SSD]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Laptop]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Laptop]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [1200.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [1200.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [2]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [2]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Latest model with advanced camera]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Latest model with advanced camera]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Smartphone]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Smartphone]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [800.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [800.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [3]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [3]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [10-inch display with long battery life]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [10-inch display with long battery life]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Tablet]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Tablet]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [350.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [350.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [4]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [4]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [27-inch 4K display]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [27-inch 4K display]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Monitor]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Monitor]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [450.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [450.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [5]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [5]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Mechanical gaming keyboard]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Mechanical gaming keyboard]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Keyboard]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Keyboard]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [150.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [150.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [6]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [6]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Wireless ergonomic mouse]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Wireless ergonomic mouse]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Mouse]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Mouse]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [50.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [50.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [7]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [7]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Noise-cancelling wireless headphones]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Noise-cancelling wireless headphones]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Headphones]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Headphones]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [200.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [200.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [8]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [8]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [All-in-one printer with scanner]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [All-in-one printer with scanner]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Printer]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Printer]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [300.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [300.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [9]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [9]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [1TB portable storage]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [1TB portable storage]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [External Hard Drive]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [External Hard Drive]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [80.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [80.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [10]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [10]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:19:27.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [64GB high-speed USB 3.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [64GB high-speed USB 3.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [USB Flash Drive]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [USB Flash Drive]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [25.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [25.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([id1_0_] : [BIGINT]) - [11]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:20:49.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([created_2_0_] : [TIMESTAMP]) - [2025-06-12 13:20:49.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Prueba 2]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([descript3_0_] : [VARCHAR]) - [Prueba 2]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Computador]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([name4_0_] : [VARCHAR]) - [Computador]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [60.0]
+2025-06-12 20:04:39 [http-nio-8080-exec-3] TRACE o.h.t.descriptor.sql.BasicExtractor - extracted value ([price5_0_] : [DOUBLE]) - [60.0]

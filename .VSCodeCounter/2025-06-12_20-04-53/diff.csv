@@ -1,0 +1,25 @@
+"filename", "language", "Properties", "XML", "HTML", "Java", "PostCSS", "Log", "JavaScript", "comment", "blank", "total"
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\logs\application.log", "Log", 0, 0, 0, 0, 0, 934, 0, 0, 16, 950
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\logs\database.log", "Log", 0, 0, 0, 0, 0, 298, 0, 0, 1, 299
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\config\LogDirectoryConfig.java", "Java", 0, 0, 0, 39, 0, 0, 0, 2, 7, 48
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\config\SecurityConfig.java", "Java", 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\controller\AdminController.java", "Java", 0, 0, 0, 12, 0, 0, 0, 3, 4, 19
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\controller\LogController.java", "Java", 0, 0, 0, 58, 0, 0, 0, 6, 12, 76
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\java\com\example\crud\service\LogService.java", "Java", 0, 0, 0, 80, 0, 0, 0, 25, 14, 119
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\application.properties", "Properties", 3, 0, 0, 0, 0, 0, 0, 0, 0, 3
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\logback.xml", "XML", 0, 22, 0, 0, 0, 0, 0, 3, 2, 27
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\static\css\style.css", "PostCSS", 0, 0, 0, 0, 55, 0, 0, 1, 11, 67
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\admin\logs.html", "HTML", 0, 0, 175, 0, 0, 0, 0, 0, 10, 185
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\src\main\resources\templates\products\list.html", "HTML", 0, 0, 2, 0, 0, 0, 0, 0, 0, 2
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\application.properties", "Properties", -12, 0, 0, 0, 0, 0, 0, -2, -3, -17
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\logback.xml", "XML", 0, -26, 0, 0, 0, 0, 0, 0, -4, -30
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\static\css\style.css", "PostCSS", 0, 0, 0, 0, -162, 0, 0, -10, -32, -204
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\static\js\script.js", "JavaScript", 0, 0, 0, 0, 0, 0, -29, -4, -3, -36
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\error.html", "HTML", 0, 0, -38, 0, 0, 0, 0, 0, -7, -45
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\login.html", "HTML", 0, 0, -68, 0, 0, 0, 0, 0, -9, -77
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\products\form.html", "HTML", 0, 0, -54, 0, 0, 0, 0, 0, -7, -61
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\products\list.html", "HTML", 0, 0, -75, 0, 0, 0, 0, -4, -6, -85
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\users\form.html", "HTML", 0, 0, -68, 0, 0, 0, 0, 0, -8, -76
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\classes\templates\users\list.html", "HTML", 0, 0, -69, 0, 0, 0, 0, 0, -4, -73
+"c:\Proyectos\MISO\2025 13 Modernizacion\sample-sprint-boot\target\maven-archiver\pom.properties", "Properties", -3, 0, 0, 0, 0, 0, 0, 0, -1, -4
+"Total", "-", -12, -4, -195, 190, -107, 1232, -29, 20, -7, 1088
