@@ -1,0 +1,30 @@
+/* Order specific styling */
+.header-with-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.no-data {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 20px 0;
+    color: #6c757d;
+}
+
+/* Form styling improvements */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons .btn {
+    margin-right: 10px;
+}

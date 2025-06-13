@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/orders.css}">
+</head>
+<body>
+    <header>
+        <h1>Order Management</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/products}">Products</a></li>
+                <li><a th:href="@{/orders}" class="active">My Orders</a></li>
+                <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/users}">Users</a></li>
+                <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/admin/logs}">Logs</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="header-with-button">
+                <h2 th:text="${isAdmin} ? 'All Orders' : 'My Orders'"></h2>
+                <a th:href="@{/orders/new}" class="btn btn-primary">New Order</a>
+            </div>
+
+            <div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
+
+            <div th:if="${#lists.isEmpty(orders)}" class="no-data">
+                <p>No orders found.</p>
+            </div>
+
+            <table th:if="${!#lists.isEmpty(orders)}">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th th:if="${isAdmin}">User</th>
+                        <th>Comments</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="order : ${orders}">
+                        <td th:text="${order.id}"></td>
+                        <td th:text="${#dates.format(order.orderDate, 'yyyy-MM-dd')}"></td>
+                        <td th:text="${order.product.name}"></td>
+                        <td th:text="${order.quantity}"></td>
+                        <td th:if="${isAdmin}" th:text="${order.user.username}"></td>
+                        <td th:text="${#strings.abbreviate(order.comments, 30)}"></td>
+                        <td class="actions">
+                            <a th:href="@{/orders/edit/{id}(id=${order.id})}" class="btn btn-sm btn-primary">Edit</a>
+                            <a th:href="@{/orders/delete/{id}(id=${order.id})}" class="btn btn-sm btn-danger"
+                               onclick="return confirm('Are you sure you want to delete this order?')">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CRUD Application</p>
+    </footer>
+    
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

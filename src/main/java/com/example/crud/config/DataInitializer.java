@@ -1,7 +1,9 @@
 package com.example.crud.config;
 
+import com.example.crud.model.Order;
 import com.example.crud.model.Product;
 import com.example.crud.model.User;
+import com.example.crud.repository.OrderRepository;
 import com.example.crud.repository.ProductRepository;
 import com.example.crud.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Date;
 import java.util.Set;
 
 @Configuration
@@ -20,10 +23,8 @@ public class DataInitializer {
     private static final Logger logger = LoggerFactory.getLogger(DataInitializer.class);
     
     @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Bean
-    public CommandLineRunner initData(ProductRepository productRepository, UserRepository userRepository) {
+    private PasswordEncoder passwordEncoder;    @Bean
+    public CommandLineRunner initData(ProductRepository productRepository, UserRepository userRepository, OrderRepository orderRepository) {
         return args -> {
             logger.info("Data initialization started...");
             
@@ -66,9 +67,40 @@ public class DataInitializer {
                 apiUser.setRoles(Set.of("API_USER"));
                 userRepository.save(apiUser);
                 
-                logger.info("Default users created: {}", userRepository.count());
-            } else {
+                logger.info("Default users created: {}", userRepository.count());            } else {
                 logger.info("Users already exist in the database, skipping initialization");
+            }
+            
+            // Initialize sample orders if there are none
+            if (orderRepository.count() == 0 && productRepository.count() > 0 && userRepository.count() > 0) {
+                logger.info("Creating sample orders");
+                
+                // Get some existing users and products to create orders
+                User regularUser = userRepository.findByUsername("user").orElse(null);
+                User adminUser = userRepository.findByUsername("admin").orElse(null);
+                
+                if (regularUser != null && adminUser != null) {
+                    Product laptop = productRepository.findById(1L).orElse(null);
+                    Product smartphone = productRepository.findById(2L).orElse(null);
+                    Product tablet = productRepository.findById(3L).orElse(null);
+                    
+                    if (laptop != null && smartphone != null && tablet != null) {
+                        // Create orders for regular user
+                        Order order1 = new Order(new Date(), regularUser, laptop, 1, "Need urgent delivery");
+                        orderRepository.save(order1);
+                        
+                        Order order2 = new Order(new Date(), regularUser, smartphone, 2, "Gift package please");
+                        orderRepository.save(order2);
+                        
+                        // Create an order for admin user
+                        Order order3 = new Order(new Date(), adminUser, tablet, 1, "For testing purposes");
+                        orderRepository.save(order3);
+                        
+                        logger.info("Sample orders created: {}", orderRepository.count());
+                    }
+                }
+            } else {
+                logger.info("Orders already exist or prerequisites missing, skipping order initialization");
             }
             
             logger.info("Data initialization completed");

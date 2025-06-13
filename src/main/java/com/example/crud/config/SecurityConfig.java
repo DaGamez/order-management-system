@@ -19,14 +19,13 @@ public class SecurityConfig {
 
     public SecurityConfig(CustomUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
-    }
-
-    @Bean
+    }    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf().disable()  // Disable CSRF for API requests
             .authorizeRequests()
                 .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
+                .antMatchers("/api/orders/**").authenticated() // Authenticated users can access their orders via API
                 .antMatchers("/api/**").hasRole("API_USER")
                 .antMatchers("/users/**").hasRole("ADMIN")
                 .antMatchers("/admin/**").hasRole("ADMIN")
