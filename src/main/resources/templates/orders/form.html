@@ -43,10 +43,10 @@
                     </select>
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('product')}" th:errors="*{product}"></div>
                 </div>
-                
-                <div class="form-group">
+                  <div class="form-group">
                     <label for="quantity">Quantity</label>
-                    <input type="number" id="quantity" th:field="*{quantity}" min="1" required class="form-control"
+                    <input type="number" id="quantity" th:field="*{quantity}" min="1" step="1" required class="form-control"
+                           onchange="this.value = Math.floor(this.value)" 
                            th:classappend="${#fields.hasErrors('quantity')} ? 'is-invalid'" />
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
                 </div>
@@ -62,12 +62,11 @@
                 </div>
             </form>
         </section>
-    </main>
-
-    <footer>
+    </main>    <footer>
         <p>&copy; 2025 CRUD Application</p>
     </footer>
 
     <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/orderForm.js}"></script>
 </body>
 </html>

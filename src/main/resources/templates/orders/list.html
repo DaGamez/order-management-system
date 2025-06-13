@@ -50,7 +50,7 @@
                 <tbody>
                     <tr th:each="order : ${orders}">
                         <td th:text="${order.id}"></td>
-                        <td th:text="${#dates.format(order.orderDate, 'yyyy-MM-dd')}"></td>
+                        <td th:text="${order.orderDate}"></td>
                         <td th:text="${order.product.name}"></td>
                         <td th:text="${order.quantity}"></td>
                         <td th:if="${isAdmin}" th:text="${order.user.username}"></td>

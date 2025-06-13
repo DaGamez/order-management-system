@@ -1,8 +1,10 @@
 package com.example.crud.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,11 +13,9 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @NotNull(message = "Order date is required")
+    private Long id;    @NotNull(message = "Order date is required")
     @Column(name = "order_date", nullable = false)
-    private Date orderDate;
+    private LocalDate orderDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
@@ -23,10 +23,9 @@ public class Order {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
-
-    @NotNull(message = "Quantity is required")
+    private Product product;    @NotNull(message = "Quantity is required")
     @Positive(message = "Quantity must be positive")
+    @Digits(integer=10, fraction=0, message="Quantity must be a whole number")
     @Column(nullable = false)
     private Integer quantity;
 
@@ -37,14 +36,12 @@ public class Order {
     private Date createdAt;
 
     @Column(name = "updated_at")
-    private Date updatedAt;
-
-    @PrePersist
+    private Date updatedAt;    @PrePersist
     protected void onCreate() {
         createdAt = new Date();
         updatedAt = new Date();
         if (orderDate == null) {
-            orderDate = new Date();
+            orderDate = LocalDate.now();
         }
     }
 
@@ -55,10 +52,8 @@ public class Order {
 
     // Default constructor
     public Order() {
-    }
-
-    // Constructor with parameters
-    public Order(Date orderDate, User user, Product product, Integer quantity, String comments) {
+    }    // Constructor with parameters
+    public Order(LocalDate orderDate, User user, Product product, Integer quantity, String comments) {
         this.orderDate = orderDate;
         this.user = user;
         this.product = product;
@@ -73,13 +68,11 @@ public class Order {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Date getOrderDate() {
+    }    public LocalDate getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
     }
 

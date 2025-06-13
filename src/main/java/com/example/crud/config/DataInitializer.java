@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -84,16 +85,15 @@ public class DataInitializer {
                     Product smartphone = productRepository.findById(2L).orElse(null);
                     Product tablet = productRepository.findById(3L).orElse(null);
                     
-                    if (laptop != null && smartphone != null && tablet != null) {
-                        // Create orders for regular user
-                        Order order1 = new Order(new Date(), regularUser, laptop, 1, "Need urgent delivery");
+                    if (laptop != null && smartphone != null && tablet != null) {                        // Create orders for regular user
+                        Order order1 = new Order(LocalDate.now(), regularUser, laptop, 1, "Need urgent delivery");
                         orderRepository.save(order1);
                         
-                        Order order2 = new Order(new Date(), regularUser, smartphone, 2, "Gift package please");
+                        Order order2 = new Order(LocalDate.now(), regularUser, smartphone, 2, "Gift package please");
                         orderRepository.save(order2);
                         
                         // Create an order for admin user
-                        Order order3 = new Order(new Date(), adminUser, tablet, 1, "For testing purposes");
+                        Order order3 = new Order(LocalDate.now(), adminUser, tablet, 1, "For testing purposes");
                         orderRepository.save(order3);
                         
                         logger.info("Sample orders created: {}", orderRepository.count());
