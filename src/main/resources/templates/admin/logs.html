@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Logs</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    <style>
+    <link rel="stylesheet" th:href="@{/css/style.css}">    <style>
+        /* Style for active navigation link */
+        .navbar a.active {
+            color: #0e7c7b;
+            font-weight: bold;
+        }
+        
         .logs-container {
             background-color: #1e1e1e;
             color: #f0f0f0;
@@ -90,15 +95,37 @@
             display: flex;
             gap: 10px;
             margin-bottom: 15px;
-        }
-    </style>
+        }    </style>
 </head>
-<body>    <div class="container">
+<body>
+    <header class="header">
+        <h1>Product Management System</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a th:href="@{/products}">Products</a></li>
+            <li><a th:href="@{/products/new}">Add New Product</a></li>
+            <li><a th:href="@{/orders}">My Orders</a></li>
+            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <a th:href="@{/users}">User Management</a>
+            </li>
+            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <a th:href="@{/admin/logs}" class="active">Database Logs</a>
+            </li>
+            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <a th:href="@{/admin/dashboard}">Dashboard</a>
+            </li>
+            <li style="margin-left: auto;">
+                <form th:action="@{/logout}" method="post" style="display:inline;">
+                    <span th:text="${#authentication.name}"></span>
+                    <button type="submit" class="btn btn-danger" style="padding: 5px 10px; margin-left: 10px;">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="container">
         <h1>System Logs</h1>
-        <div class="navigation-links">
-            <a th:href="@{/products}" class="btn btn-secondary">Back to Products</a>
-            <a th:href="@{/admin/dashboard}" class="btn btn-primary">View Dashboard</a>
-        </div>
         
         <div class="log-nav">
             <a th:href="@{/admin/logs(logType='DATABASE')}" th:class="${logType.name() == 'DATABASE'} ? 'active' : ''">Database Logs</a>
