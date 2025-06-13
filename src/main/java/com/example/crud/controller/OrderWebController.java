@@ -31,11 +31,9 @@ public class OrderWebController {
         this.orderService = orderService;
         this.productService = productService;
         this.userService = userService;
-    }
-
-    @GetMapping
+    }    @GetMapping
     public String getAllOrders(Model model, Authentication authentication) {
-        User currentUser = userService.findByUsername(authentication.getName())
+        User currentUser = userService.getUserByUsername(authentication.getName())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
         
         boolean isAdmin = authentication.getAuthorities().stream()
@@ -71,10 +69,9 @@ public class OrderWebController {
         if (result.hasErrors()) {
             List<Product> products = productService.getAllProducts();
             model.addAttribute("products", products);
-            return "orders/form";
-        }
+            return "orders/form";        }
 
-        User currentUser = userService.findByUsername(authentication.getName())
+        User currentUser = userService.getUserByUsername(authentication.getName())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
         
         order.setUser(currentUser);
@@ -88,14 +85,12 @@ public class OrderWebController {
         }
         
         return "redirect:/orders";
-    }
-
-    @GetMapping("/edit/{id}")
+    }    @GetMapping("/edit/{id}")
     public String showEditOrderForm(@PathVariable Long id, Model model, Authentication authentication) {
         Order order = orderService.getOrderById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Order not found with id: " + id));
         
-        User currentUser = userService.findByUsername(authentication.getName())
+        User currentUser = userService.getUserByUsername(authentication.getName())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
         
         boolean isAdmin = authentication.getAuthorities().stream()
@@ -111,12 +106,11 @@ public class OrderWebController {
         return "orders/form";
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteOrder(@PathVariable Long id, Authentication authentication, RedirectAttributes redirectAttributes) {
+    @GetMapping("/delete/{id}")    public String deleteOrder(@PathVariable Long id, Authentication authentication, RedirectAttributes redirectAttributes) {
         Order order = orderService.getOrderById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Order not found with id: " + id));
         
-        User currentUser = userService.findByUsername(authentication.getName())
+        User currentUser = userService.getUserByUsername(authentication.getName())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
         
         boolean isAdmin = authentication.getAuthorities().stream()
