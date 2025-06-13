@@ -18,12 +18,14 @@
             <li><a th:href="@{/products}">Products</a></li>
             <li><a th:href="@{/products/new}">Add New Product</a></li>
             <li><a th:href="@{/orders}" class="active">My Orders</a></li>
-            <li><a th:href="@{/orders/new}">Add New Order</a></li>
-            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+            <li><a th:href="@{/orders/new}">Add New Order</a></li>            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
                 <a th:href="@{/users}">User Management</a>
             </li>
             <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
                 <a th:href="@{/admin/logs}">Database Logs</a>
+            </li>
+            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <a th:href="@{/admin/dashboard}">Dashboard</a>
             </li>
             <li style="margin-left: auto;">
                 <form th:action="@{/logout}" method="post" style="display:inline;">

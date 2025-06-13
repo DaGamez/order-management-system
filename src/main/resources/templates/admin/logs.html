@@ -86,12 +86,19 @@
             gap: 10px;
             margin-bottom: 15px;
         }
+        .navigation-links {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
+<body>    <div class="container">
         <h1>System Logs</h1>
-        <a th:href="@{/products}" class="btn btn-secondary">Back to Products</a>
+        <div class="navigation-links">
+            <a th:href="@{/products}" class="btn btn-secondary">Back to Products</a>
+            <a th:href="@{/admin/dashboard}" class="btn btn-primary">View Dashboard</a>
+        </div>
         
         <div class="log-nav">
             <a th:href="@{/admin/logs(logType='DATABASE')}" th:class="${logType.name() == 'DATABASE'} ? 'active' : ''">Database Logs</a>
