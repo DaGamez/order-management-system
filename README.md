@@ -45,6 +45,8 @@ A comprehensive Order Management System application built using Spring Boot and 
 
 3. **Build the project**
 
+   Important to have the DB running at this point.
+   
    ```
    mvn clean install
    ```
