@@ -37,7 +37,9 @@ A comprehensive Order Management System application built using Spring Boot and 
 
    - Make sure MySQL is installed and running
    - Create a database named `order_management_system_db` (optional, the application will create it if it doesn't exist)
-   - Update the database configuration in `src/main/resources/application.properties` if needed:   ```
+   - Update the database configuration in `src/main/resources/application.properties` if needed:
+   
+   ```
    spring.datasource.url=jdbc:mysql://localhost:3306/order_management_system_db?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
    spring.datasource.username=root
    spring.datasource.password=root
