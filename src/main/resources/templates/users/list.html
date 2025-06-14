@@ -12,8 +12,7 @@
         .navbar a.active {
             color: #0e7c7b;
             font-weight: bold;
-        }
-    </style>
+        }    </style>
 </head>
 <body>
     <header class="header">
@@ -22,7 +21,6 @@
     <nav class="navbar">
         <ul>
             <li><a th:href="@{/products}">Products</a></li>
-            <li><a th:href="@{/products/new}">Add New Product</a></li>
             <li><a th:href="@{/orders}">My Orders</a></li>
             <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
                 <a th:href="@{/users}" class="active">User Management</a>

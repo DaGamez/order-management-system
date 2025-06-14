@@ -6,13 +6,16 @@
     <title>Product Management System</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
-<body>
-    <header class="header">
+<body>    <header class="header">
         <h1>Product Management System</h1>
-    </header>      <nav class="navbar">        <ul>
-            <li><a th:href="@{/products}">Products</a></li>
+    </header>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a th:href="@{/products}" class="active">Products</a></li>
             <li><a th:href="@{/products/new}">Add New Product</a></li>
-            <li><a th:href="@{/orders}">My Orders</a></li>            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+            <li><a th:href="@{/orders}">My Orders</a></li>
+            <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
                 <a th:href="@{/users}">User Management</a>
             </li>
             <li th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
