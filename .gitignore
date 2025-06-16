@@ -1,0 +1,6 @@
+target/*
+logs/application.log
+.VSCodeCounter/*
+logs/application.log
+logs/database.log
+.VSCodeCounter/2025-06-12_13-42-41/details.md

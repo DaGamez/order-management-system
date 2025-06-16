@@ -1,0 +1,129 @@
+Date : 2025-06-14 08:44:52
+Directory : c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system
+Total : 59 files,  4087 codes, 205 comments, 838 blanks, all 5130 lines
+
+Languages
++--------------+------------+------------+------------+------------+------------+
+| language     | files      | code       | comment    | blank      | total      |
++--------------+------------+------------+------------+------------+------------+
+| Java         |         37 |      2,039 |        163 |        507 |      2,709 |
+| HTML         |         10 |      1,146 |          8 |        104 |      1,258 |
+| Markdown     |          2 |        392 |          0 |        142 |        534 |
+| PostCSS      |          2 |        248 |         14 |         49 |        311 |
+| XML          |          2 |        125 |          3 |         11 |        139 |
+| JavaScript   |          2 |         51 |          9 |          7 |         67 |
+| Batch        |          1 |         33 |          1 |          6 |         40 |
+| Shell Script |          1 |         28 |          2 |          6 |         36 |
+| Properties   |          1 |         15 |          2 |          3 |         20 |
+| MS SQL       |          1 |         10 |          3 |          3 |         16 |
++--------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                      | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                         |         59 |      4,087 |        205 |        838 |      5,130 |
+| . (Files)                                                                                                                                 |          5 |        530 |          3 |        159 |        692 |
+| src                                                                                                                                       |         54 |      3,557 |        202 |        679 |      4,438 |
+| src\main                                                                                                                                  |         49 |      3,255 |        168 |        599 |      4,022 |
+| src\main\java                                                                                                                             |         32 |      1,737 |        129 |        427 |      2,293 |
+| src\main\java\com                                                                                                                         |         32 |      1,737 |        129 |        427 |      2,293 |
+| src\main\java\com\example                                                                                                                 |         32 |      1,737 |        129 |        427 |      2,293 |
+| src\main\java\com\example\crud                                                                                                            |         32 |      1,737 |        129 |        427 |      2,293 |
+| src\main\java\com\example\crud (Files)                                                                                                    |          1 |          9 |          0 |          4 |         13 |
+| src\main\java\com\example\crud\aspect                                                                                                     |          1 |        114 |         11 |         21 |        146 |
+| src\main\java\com\example\crud\config                                                                                                     |          4 |        160 |         12 |         36 |        208 |
+| src\main\java\com\example\crud\controller                                                                                                 |          8 |        606 |         27 |        119 |        752 |
+| src\main\java\com\example\crud\exception                                                                                                  |          1 |         63 |          1 |         14 |         78 |
+| src\main\java\com\example\crud\model                                                                                                      |          4 |        312 |         10 |         91 |        413 |
+| src\main\java\com\example\crud\repository                                                                                                 |          4 |         54 |          8 |         26 |         88 |
+| src\main\java\com\example\crud\service                                                                                                    |          9 |        419 |         60 |        116 |        595 |
+| src\main\resources                                                                                                                        |         17 |      1,518 |         39 |        172 |      1,729 |
+| src\main\resources (Files)                                                                                                                |          2 |         63 |          5 |          9 |         77 |
+| src\main\resources\db                                                                                                                     |          1 |         10 |          3 |          3 |         16 |
+| src\main\resources\db\migration                                                                                                           |          1 |         10 |          3 |          3 |         16 |
+| src\main\resources\static                                                                                                                 |          4 |        299 |         23 |         56 |        378 |
+| src\main\resources\static\css                                                                                                             |          2 |        248 |         14 |         49 |        311 |
+| src\main\resources\static\js                                                                                                              |          2 |         51 |          9 |          7 |         67 |
+| src\main\resources\templates                                                                                                              |         10 |      1,146 |          8 |        104 |      1,258 |
+| src\main\resources\templates (Files)                                                                                                      |          2 |        105 |          0 |         16 |        121 |
+| src\main\resources\templates\admin                                                                                                        |          2 |        557 |          1 |         48 |        606 |
+| src\main\resources\templates\orders                                                                                                       |          2 |        156 |          3 |         12 |        171 |
+| src\main\resources\templates\products                                                                                                     |          2 |        142 |          4 |         13 |        159 |
+| src\main\resources\templates\users                                                                                                        |          2 |        186 |          0 |         15 |        201 |
+| src\test                                                                                                                                  |          5 |        302 |         34 |         80 |        416 |
+| src\test\java                                                                                                                             |          5 |        302 |         34 |         80 |        416 |
+| src\test\java\com                                                                                                                         |          5 |        302 |         34 |         80 |        416 |
+| src\test\java\com\example                                                                                                                 |          5 |        302 |         34 |         80 |        416 |
+| src\test\java\com\example\crud                                                                                                            |          5 |        302 |         34 |         80 |        416 |
+| src\test\java\com\example\crud (Files)                                                                                                    |          1 |          9 |          0 |          4 |         13 |
+| src\test\java\com\example\crud\config                                                                                                     |          2 |         80 |          0 |         16 |         96 |
+| src\test\java\com\example\crud\controller                                                                                                 |          1 |        100 |         12 |         26 |        138 |
+| src\test\java\com\example\crud\service                                                                                                    |          1 |        113 |         22 |         34 |        169 |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| filename                                                                                                                                  | language     | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\API_DOCUMENTATION.md                                                      | Markdown     |        258 |          0 |        104 |        362 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\README.md                                                                 | Markdown     |        134 |          0 |         38 |        172 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\pom.xml                                                                   | XML          |         77 |          0 |          5 |         82 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\run.bat                                                                   | Batch        |         33 |          1 |          6 |         40 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\run.sh                                                                    | Shell Script |         28 |          2 |          6 |         36 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\OrderManagementSystemApplication.java      | Java         |          9 |          0 |          4 |         13 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\aspect\UserQueryAspect.java                | Java         |        114 |         11 |         21 |        146 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\config\AspectConfig.java                   | Java         |          7 |          1 |          3 |         11 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\config\DataInitializer.java                | Java         |         80 |          8 |         22 |        110 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\config\SecurityConfig.java                 | Java         |         46 |          0 |          7 |         53 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\config\WebConfig.java                      | Java         |         27 |          3 |          4 |         34 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\DashboardController.java        | Java         |         55 |          5 |         14 |         74 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\LogController.java              | Java         |         58 |          6 |         12 |         76 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\LoginController.java            | Java         |         10 |          0 |          4 |         14 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\OrderController.java            | Java         |        121 |          6 |         19 |        146 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\OrderWebController.java         | Java         |        108 |          0 |         26 |        134 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\ProductController.java          | Java         |         80 |          7 |         13 |        100 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\UserController.java             | Java         |         89 |          3 |         15 |        107 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\controller\WebController.java              | Java         |         85 |          0 |         16 |        101 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\exception\GlobalExceptionHandler.java      | Java         |         63 |          1 |         14 |         78 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\model\Order.java                           | Java         |         99 |          2 |         26 |        127 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\model\Product.java                         | Java         |         74 |          3 |         22 |         99 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\model\User.java                            | Java         |         75 |          2 |         22 |         99 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\model\UserQuery.java                       | Java         |         64 |          3 |         21 |         88 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\repository\OrderRepository.java            | Java         |         11 |          0 |          4 |         15 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\repository\ProductRepository.java          | Java         |         11 |          3 |          6 |         20 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\repository\UserQueryRepository.java        | Java         |         22 |          5 |         10 |         37 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\repository\UserRepository.java             | Java         |         10 |          0 |          6 |         16 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\CustomUserDetailsService.java      | Java         |         34 |          0 |          8 |         42 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\LogService.java                    | Java         |        113 |         34 |         15 |        162 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\OrderService.java                  | Java         |         13 |          0 |          4 |         17 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\OrderServiceImpl.java              | Java         |         53 |          0 |         12 |         65 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\ProductService.java                | Java         |         14 |          0 |         11 |         25 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\ProductServiceImpl.java            | Java         |         55 |          0 |         17 |         72 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\UserQueryService.java              | Java         |         65 |         24 |         21 |        110 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\UserService.java                   | Java         |         13 |          0 |         11 |         24 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\java\com\example\crud\service\UserServiceImpl.java               | Java         |         59 |          2 |         17 |         78 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\application.properties                                 | Properties   |         15 |          2 |          3 |         20 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\db\migration\V2__Add_User_Queries_Table.sql            | MS SQL       |         10 |          3 |          3 |         16 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\logback.xml                                            | XML          |         48 |          3 |          6 |         57 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\static\css\orders.css                                  | PostCSS      |         24 |          2 |          5 |         31 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\static\css\style.css                                   | PostCSS      |        224 |         12 |         44 |        280 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\static\js\orderForm.js                                 | JavaScript   |         22 |          5 |          4 |         31 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\static\js\script.js                                    | JavaScript   |         29 |          4 |          3 |         36 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\admin\dashboard.html                         | HTML         |        353 |          1 |         36 |        390 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\admin\logs.html                              | HTML         |        204 |          0 |         12 |        216 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\error.html                                   | HTML         |         37 |          0 |          7 |         44 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\login.html                                   | HTML         |         68 |          0 |          9 |         77 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\orders\form.html                             | HTML         |         73 |          0 |          6 |         79 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\orders\list.html                             | HTML         |         83 |          3 |          6 |         92 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\products\form.html                           | HTML         |         61 |          0 |          7 |         68 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\products\list.html                           | HTML         |         81 |          4 |          6 |         91 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\users\form.html                              | HTML         |         91 |          0 |         10 |        101 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\main\resources\templates\users\list.html                              | HTML         |         95 |          0 |          5 |        100 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\test\java\com\example\crud\OrderManagementSystemApplicationTests.java | Java         |          9 |          0 |          4 |         13 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\test\java\com\example\crud\config\TestSecurityConfig.java             | Java         |         51 |          0 |          9 |         60 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\test\java\com\example\crud\config\TestUserDetailsConfig.java          | Java         |         29 |          0 |          7 |         36 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\test\java\com\example\crud\controller\ProductControllerTest.java      | Java         |        100 |         12 |         26 |        138 |
+| c:\Proyectos\MISO\2025 13 Modernizacion\order-management-system\src\test\java\com\example\crud\service\UserServiceTest.java               | Java         |        113 |         22 |         34 |        169 |
+| Total                                                                                                                                     |              |      4,087 |        205 |        838 |      5,130 |
++-------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+

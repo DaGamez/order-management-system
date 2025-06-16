@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login - Order Management System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #35424a;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Order Management System</h1>
+    </header>
+    
+    <div class="container">
+        <div class="login-container">
+            <h2 class="login-title">Login</h2>
+            
+            <div th:if="${param.error}" class="alert alert-danger">
+                Invalid username or password.
+            </div>
+            
+            <div th:if="${param.logout}" class="alert alert-success">
+                You have been logged out.
+            </div>
+            
+            <form class="login-form" th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" type="text" name="username" id="username" required autofocus/>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password" required/>
+                </div>
+                
+                <button class="btn btn-primary login-button" type="submit">Login</button>
+            </form>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <small>Default credentials:</small>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><strong>Username:</strong> user, <strong>Password:</strong> password</li>
+                    <li><strong>Username:</strong> admin, <strong>Password:</strong> admin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Product Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
