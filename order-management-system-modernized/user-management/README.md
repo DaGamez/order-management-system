@@ -195,12 +195,176 @@ user-management/
 
 ### Testing
 
-The service can be tested using the interactive documentation at `/docs` or with tools like:
+#### Unit Testing
 
-- Postman
-- curl
-- httpx (Python)
-- Any HTTP client
+The service includes comprehensive unit tests using **pytest** with async support. The tests cover authentication, error handling, and API endpoints.
+
+##### Test Setup
+
+1. **Activate virtual environment (if using venv2):**
+   ```bash
+   # Windows PowerShell
+   .\venv2\Scripts\Activate.ps1
+   
+   # Windows CMD
+   venv2\Scripts\activate.bat
+   
+   # Linux/macOS
+   source venv2/bin/activate
+   ```
+
+2. **Install test dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+##### Running Tests
+
+**Run all tests:**
+```bash
+python -m pytest test_api.py -v
+```
+
+**Run specific test class:**
+```bash
+# Authentication tests only
+python -m pytest test_api.py::TestAuthentication -v
+
+# Health check tests only
+python -m pytest test_api.py::TestHealthCheck -v
+```
+
+**Run specific test:**
+```bash
+# Test successful login
+python -m pytest test_api.py::TestAuthentication::test_login_success -v
+
+# Test invalid credentials
+python -m pytest test_api.py::TestAuthentication::test_login_invalid_credentials -v
+```
+
+**Run tests with coverage:**
+```bash
+python -m pytest test_api.py --cov=. --cov-report=html
+```
+
+##### Test Cases
+
+**Authentication Tests (`TestAuthentication`):**
+- ✅ `test_login_success` - Successful login with valid credentials
+- ✅ `test_login_invalid_credentials` - Login with wrong password
+- ✅ `test_login_nonexistent_user` - Login with non-existent username
+- ✅ `test_login_validation_error` - Login with missing fields
+- ✅ `test_logout_success` - Successful logout with valid token
+- ✅ `test_logout_invalid_token` - Logout with invalid token
+- ✅ `test_logout_without_token` - Logout without authorization header
+
+**Health Check Tests (`TestHealthCheck`):**
+- ✅ `test_health_check` - Health endpoint functionality
+- ✅ `test_root_endpoint` - Root endpoint information
+
+##### Test Environment
+
+The tests use:
+- **SQLite** in-memory database for isolation
+- **pytest-asyncio** for async test support
+- **httpx.AsyncClient** for HTTP requests
+- **Automatic setup/teardown** of test data
+- **Isolated test environment** with proper cleanup
+
+##### Sample Test Output
+
+```bash
+========================= test session starts =========================
+platform win32 -- Python 3.10.16, pytest-7.4.3
+plugins: anyio-3.7.1, asyncio-0.21.1, cov-4.1.0
+collecting ... collected 9 items
+
+test_api.py::TestAuthentication::test_login_success PASSED      [ 11%]
+test_api.py::TestAuthentication::test_login_invalid_credentials PASSED [ 22%]
+test_api.py::TestAuthentication::test_login_nonexistent_user PASSED [ 33%]
+test_api.py::TestAuthentication::test_login_validation_error PASSED [ 44%]
+test_api.py::TestAuthentication::test_logout_success PASSED    [ 55%]
+test_api.py::TestAuthentication::test_logout_invalid_token PASSED [ 66%]
+test_api.py::TestAuthentication::test_logout_without_token PASSED [ 77%]
+test_api.py::TestHealthCheck::test_health_check PASSED         [ 88%]
+test_api.py::TestHealthCheck::test_root_endpoint PASSED        [100%]
+
+====================== 9 passed in 2.34s =====================
+```
+
+##### Writing New Tests
+
+To add new tests, follow this pattern:
+
+```python
+@pytest.mark.anyio
+async def test_new_feature(self, client: AsyncClient, setup_database):
+    """Test description."""
+    # Arrange
+    test_data = {"field": "value"}
+    
+    # Act
+    response = await client.post("/endpoint", json=test_data)
+    
+    # Assert
+    assert response.status_code == 200
+    data = response.json()
+    assert "expected_field" in data
+```
+
+##### Integration Testing
+
+For manual API testing, use the interactive documentation:
+
+- **Swagger UI:** http://localhost:8001/docs
+- **ReDoc:** http://localhost:8001/redoc
+
+Or command-line tools:
+
+**Test login with curl:**
+```bash
+curl -X POST "http://localhost:8001/user-management/login" \
+     -H "Content-Type: application/json" \
+     -d '{"username": "admin", "password": "admin123"}'
+```
+
+**Test with httpx (Python):**
+```python
+import httpx
+import asyncio
+
+async def test_login():
+    async with httpx.AsyncClient() as client:
+        response = await client.post(
+            "http://localhost:8001/user-management/login",
+            json={"username": "admin", "password": "admin123"}
+        )
+        print(response.status_code)
+        print(response.json())
+
+asyncio.run(test_login())
+```
+
+##### Test Database
+
+Tests use an isolated SQLite database (`test.db`) that is:
+- **Created automatically** before each test session
+- **Populated with test data** (username: "testuser", password: "testpass123")
+- **Cleaned up automatically** after tests complete
+- **Independent** from the production MySQL database
+
+##### Continuous Integration
+
+For CI/CD pipelines, add this test command:
+
+```yaml
+# GitHub Actions example
+- name: Run tests
+  run: |
+    pip install -r requirements.txt
+    python -m pytest test_api.py -v --junitxml=test-results.xml
+```
 
 ## Migration from Legacy System
 

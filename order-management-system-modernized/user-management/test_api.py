@@ -12,8 +12,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 from api import app
-from db import get_db, Base
-from models import User, PasswordManager
+from db import get_db
+from models import User, PasswordManager, Base
 
 
 # Test database setup
