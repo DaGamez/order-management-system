@@ -7,7 +7,7 @@ equivalent to the Spring Data JPA configuration in the legacy system.
 
 import os
 from typing import Generator
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.pool import StaticPool
@@ -175,7 +175,7 @@ class DatabaseHealthCheck:
         """
         try:
             session = SessionLocal()
-            session.execute("SELECT 1")
+            session.execute(text("SELECT 1"))
             session.close()
             return True
         except Exception as e:
