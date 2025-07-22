@@ -61,7 +61,7 @@ The service is organized into the following modules:
 
 3. **Configure database:**
    - Ensure MySQL is running
-   - Create database `order_management_system_db` (or configure different name in .env)
+   - Ensure database `order_management_system_db` exists with required tables and users
    - Update database credentials in `.env` file
 
 ## Running the Service
@@ -153,7 +153,7 @@ Response:
 
 ### Default Users
 
-The service creates default users on startup:
+The service expects the following users to exist in the database:
 
 - **Admin User:** username=`admin`, password=`admin123`
 - **Regular User:** username=`user`, password=`user123`
@@ -162,10 +162,10 @@ The service creates default users on startup:
 
 ## Database Schema
 
-The service automatically creates the following tables:
+The service expects the following tables to exist in the database:
 
 - `users` - User accounts
-- `user_roles` - User role assignments
+- `user_roles` - User role assignments  
 - `token_blacklist` - Blacklisted JWT tokens
 
 ## Security Features

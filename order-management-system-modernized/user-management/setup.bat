@@ -62,11 +62,8 @@ echo.
 echo Next steps:
 echo 1. Edit .env file with your database configuration
 echo 2. Ensure MySQL is running and accessible
-echo 3. Run 'start.bat' to start the service
-echo.
-echo Default users will be created on first run:
-echo - Admin: username=admin, password=admin123
-echo - User: username=user, password=user123
+echo 3. Ensure database tables and users already exist
+echo 4. Run 'start.bat' to start the service
 echo.
 echo Service will be available at: http://localhost:8001
 echo API Documentation: http://localhost:8001/docs

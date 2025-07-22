@@ -93,76 +93,6 @@ def get_database_session() -> Generator[Session, None, None]:
     finally:
         session.close()
 
-def create_tables():
-    """
-    Create all tables in the database.
-    Equivalent to Hibernate's ddl-auto=update functionality.
-    """
-    try:
-        from models import Base
-        Base.metadata.create_all(bind=engine)
-        logger.info("Database tables created successfully")
-    except Exception as e:
-        logger.error(f"Error creating database tables: {e}")
-        raise
-
-def init_database():
-    """
-    Initialize database with default data.
-    This function should be called on application startup.
-    """
-    try:
-        create_tables()
-        _create_default_users()
-        logger.info("Database initialization completed")
-    except Exception as e:
-        logger.error(f"Error initializing database: {e}")
-        raise
-
-def _create_default_users():
-    """
-    Create default users if they don't exist.
-    Equivalent to data initialization in Spring Boot.
-    """
-    from models import User, PasswordManager, UserRole
-    
-    session = SessionLocal()
-    try:
-        # Check if admin user exists
-        admin_user = session.query(User).filter(User.username == "admin").first()
-        if not admin_user:
-            # Create admin user
-            admin_user = User(
-                username="admin",
-                password=PasswordManager.hash_password("admin123"),
-                enabled=True
-            )
-            session.add(admin_user)
-            session.commit()
-            
-            # Add roles (this would typically be handled by a separate roles table)
-            logger.info("Default admin user created: admin/admin123")
-        
-        # Check if regular user exists
-        regular_user = session.query(User).filter(User.username == "user").first()
-        if not regular_user:
-            # Create regular user
-            regular_user = User(
-                username="user",
-                password=PasswordManager.hash_password("user123"),
-                enabled=True
-            )
-            session.add(regular_user)
-            session.commit()
-            logger.info("Default regular user created: user/user123")
-            
-    except Exception as e:
-        session.rollback()
-        logger.error(f"Error creating default users: {e}")
-        raise
-    finally:
-        session.close()
-
 class DatabaseHealthCheck:
     """
     Database health check utility.
@@ -221,8 +151,6 @@ __all__ = [
     "Base",
     "get_db",
     "get_database_session",
-    "create_tables",
-    "init_database",
     "DatabaseConfig",
     "DatabaseHealthCheck"
 ]

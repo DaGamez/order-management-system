@@ -31,7 +31,7 @@ from services import (
     get_auth_service,
     TokenCleanupService
 )
-from db import get_db, init_database, DatabaseHealthCheck
+from db import get_db, DatabaseHealthCheck
 
 # Configure logging
 logging.basicConfig(
@@ -115,11 +115,9 @@ async def get_current_user(
 async def startup_event():
     """
     Application startup event.
-    Initialize database and create default data.
     """
     try:
         logger.info("Starting User Management Service...")
-        init_database()
         logger.info("User Management Service started successfully")
     except Exception as e:
         logger.error(f"Error during startup: {e}")
