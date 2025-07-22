@@ -1,0 +1,479 @@
+openapi: 3.0.3
+info:
+  title: Order Management System API
+  description: |
+    This is a modernized API specification for the Order Management System that supports:
+    - JWT Authentication for secure API access
+    - Order management operations
+    - User and product management
+    
+    The API provides endpoints for managing orders, products, and users with JWT authentication and authorization.
+    JWT tokens are used for API authentication and have a configurable expiration time (default 24 hours).
+    
+    To use protected endpoints:
+    1. Login via /user-management/login to get a JWT token
+    2. Include the token in the Authorization header as 'Bearer {token}' for all other API calls
+  version: 2.0.0
+  contact:
+    name: Order Management System Team
+    email: support@ordermanagement.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:8080
+    description: Development server
+  - url: https://api.ordermanagement.com
+    description: Production server
+
+security:
+  - bearerAuth: []
+
+paths:
+  # Authentication Endpoints
+  /user-management/login:
+    post:
+      tags:
+        - Authentication
+      summary: JWT Authentication login
+      description: |
+        Authenticates a user and returns a JWT token for API access. The token should be 
+        included in the Authorization header as 'Bearer {token}' for subsequent API calls.
+        Tokens have a configurable expiration time (default 24 hours).
+      operationId: authenticateJWT
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Successful authentication with JWT token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JWTAuthResponse'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                message: "Invalid username or password"
+                timestamp: "2025-07-22T10:30:00Z"
+                status: 401
+      security: []
+
+
+  /user-management/logout:
+    post:
+      tags:
+        - Authentication
+      summary: Logout and invalidate JWT token
+      description: |
+        Logs out the current user and invalidates the JWT token. The token will be added to a blacklist
+        and cannot be used for further API calls.
+      operationId: logoutJWT
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Logout successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Logout successful"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2025-07-22T10:30:45.123Z"
+        '401':
+          description: Invalid or expired token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                message: "Error on logout: Invalid or expired token"
+                timestamp: "2025-07-22T10:30:00Z"
+                status: 401
+
+  # Order Management Endpoints
+  /order-management/orders:
+    post:
+      tags:
+        - Orders
+      summary: Create a new order
+      description: |
+        Creates a new order for the authenticated user. The order will be associated
+        with the current authenticated user automatically.
+      operationId: createOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+      responses:
+        '201':
+          description: Order created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: Bad request - validation errors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Unauthorized access
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                message: "Unauthorized access - please login"
+                timestamp: "2025-07-22T10:30:00Z"
+                status: 401
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                message: "Product not found with id: 1"
+                timestamp: "2025-07-22T10:30:00Z"
+                status: 404
+      security:
+        - bearerAuth: []
+
+  /order-management/products:
+    get:
+      tags:
+        - Products
+      summary: Get all products
+      description: |
+        Retrieves a complete list of all available products in the system.
+      operationId: getProducts
+      responses:
+        '200':
+          description: List of all products retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+              example:
+                - id: 1
+                  name: "Product 1"
+                  description: "Description for Product 1"
+                  price: 100.0
+                  createdAt: "2025-07-22T10:30:45.123Z"
+                - id: 2
+                  name: "Product 2"
+                  description: "Description for Product 2"
+                  price: 150.0
+                  createdAt: "2025-07-22T10:30:45.123Z"
+        '401':
+          description: Unauthorized access
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                message: "Unauthorized access - please login"
+                timestamp: "2025-07-22T10:30:00Z"
+                status: 401
+      security:
+        - bearerAuth: []
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token authentication. Include the token in the Authorization header as 'Bearer {token}'
+
+  schemas:
+    Order:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier for the order
+          example: 1
+        orderDate:
+          type: string
+          format: date
+          description: Date when the order was placed
+          example: "2025-07-22"
+        user:
+          $ref: '#/components/schemas/User'
+        product:
+          $ref: '#/components/schemas/Product'
+        quantity:
+          type: integer
+          minimum: 1
+          description: Quantity of products ordered
+          example: 2
+        comments:
+          type: string
+          maxLength: 500
+          description: Optional comments for the order
+          example: "Please deliver in the morning"
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp when the order was created
+          example: "2025-07-22T10:30:45.123Z"
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the order was last updated
+          example: "2025-07-22T11:30:45.123Z"
+      required:
+        - id
+        - orderDate
+        - user
+        - product
+        - quantity
+        - createdAt
+        - updatedAt
+
+    CreateOrderRequest:
+      type: object
+      properties:
+        orderDate:
+          type: string
+          format: date
+          description: Date when the order is placed (optional, defaults to current date)
+          example: "2025-07-22"
+        product_id:
+          type: integer
+          format: int64
+          description: ID of the product to order
+          example: 1
+        quantity:
+          type: integer
+          minimum: 1
+          description: Quantity of products to order
+          example: 2
+        comments:
+          type: string
+          maxLength: 500
+          description: Optional comments for the order
+          example: "Please deliver in the morning"
+      required:
+        - product_id
+        - quantity
+
+    LoginRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 3
+          maxLength: 50
+          description: Username for authentication
+          example: "admin"
+        password:
+          type: string
+          format: password
+          minLength: 6
+          description: Password for authentication
+          example: "admin123"
+      required:
+        - username
+        - password
+
+    JWTAuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          description: JWT access token
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        tokenType:
+          type: string
+          description: Type of the token
+          example: "Bearer"
+        expiresIn:
+          type: integer
+          format: int64
+          description: Token expiration time in seconds
+          example: 86400
+        issuedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the token was issued
+          example: "2025-07-22T10:30:45.123Z"
+        user:
+          $ref: '#/components/schemas/UserInfo'
+      required:
+        - token
+        - tokenType
+        - expiresIn
+        - issuedAt
+        - user
+
+    UserInfo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier for the user
+          example: 1
+        username:
+          type: string
+          description: Username of the user
+          example: "admin"
+        roles:
+          type: array
+          items:
+            type: string
+          description: List of roles assigned to the user
+          example: ["USER", "ADMIN"]
+      required:
+        - id
+        - username
+        - roles
+
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier for the user
+          example: 1
+        username:
+          type: string
+          minLength: 3
+          maxLength: 50
+          description: Username of the user
+          example: "john_doe"
+        enabled:
+          type: boolean
+          description: Whether the user account is enabled
+          example: true
+        roles:
+          type: array
+          items:
+            type: string
+          description: List of roles assigned to the user
+          example: ["USER", "ADMIN"]
+      required:
+        - id
+        - username
+        - enabled
+
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier for the product
+          example: 1
+        name:
+          type: string
+          description: Name of the product
+          example: "Laptop"
+        description:
+          type: string
+          description: Description of the product
+          example: "High-performance laptop with SSD"
+        price:
+          type: number
+          format: double
+          minimum: 0
+          description: Price of the product
+          example: 1200.00
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp when the product was created
+          example: "2025-07-22T10:30:45.123Z"
+      required:
+        - id
+        - name
+        - price
+        - createdAt
+
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message describing what went wrong
+          example: "Order not found with id: 1"
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the error occurred
+          example: "2025-07-22T10:30:45.123Z"
+        status:
+          type: integer
+          description: HTTP status code
+          example: 404
+      required:
+        - message
+        - timestamp
+        - status
+
+    ValidationErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: General error message
+          example: "Validation failed"
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the error occurred
+          example: "2025-07-22T10:30:45.123Z"
+        status:
+          type: integer
+          description: HTTP status code
+          example: 400
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+                description: The field that failed validation
+                example: "quantity"
+              message:
+                type: string
+                description: The validation error message
+                example: "Quantity must be positive"
+          description: List of validation errors
+      required:
+        - message
+        - timestamp
+        - status
+
+tags:
+  - name: Authentication
+    description: Endpoints for user authentication and session management
+  - name: Orders
+    description: Endpoints for managing orders
+  - name: Products
+    description: Endpoints for managing products
