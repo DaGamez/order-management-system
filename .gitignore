@@ -1,7 +1,30 @@
-target/*
-logs/application.log
-.VSCodeCounter/*
-logs/application.log
-logs/database.log
-.VSCodeCounter/2025-06-12_13-42-41/details.md
-.VSCodeCounter/*
+# Global IDE and OS files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Global build and temp directories
+.tmp/
+.temp/
+node_modules/
+
+# Legacy Java/Spring Boot Application
+order-management-system-legacy/target/
+order-management-system-legacy/logs/
+order-management-system-legacy/*.log
+order-management-system-legacy/.mvn/
+order-management-system-legacy/mvnw
+order-management-system-legacy/mvnw.cmd
+order-management-system-legacy/.settings/
+order-management-system-legacy/.project
+order-management-system-legacy/.classpath
+
+
+
+# VS Code Counter
+.VSCodeCounter/
