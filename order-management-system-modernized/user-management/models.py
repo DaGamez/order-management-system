@@ -44,7 +44,7 @@ class LoginRequest(BaseModel):
     Login request model matching the OpenAPI specification.
     """
     username: str = Field(..., min_length=3, max_length=50, description="Username for authentication")
-    password: str = Field(..., min_length=6, description="Password for authentication")
+    password: str = Field(..., min_length=1, description="Password for authentication")
     
     @validator('username')
     def username_must_be_valid(cls, v):
@@ -105,12 +105,20 @@ class UserRole:
         return [cls.USER, cls.ADMIN, cls.API_USER]
 
 # Password hashing configuration
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# Match legacy Spring Security configuration exactly (10 rounds, $2a$ format)
+pwd_context = CryptContext(
+    schemes=["bcrypt"], 
+    deprecated="auto",
+    bcrypt__rounds=10,        # Match legacy Spring Security rounds
+    bcrypt__min_rounds=10,    # Accept legacy 10-round hashes
+    bcrypt__ident="2a"        # Use $2a$ format to match Spring Security exactly
+)
 
 class PasswordManager:
     """
     Password hashing and verification utility.
     Equivalent to Spring Security's PasswordEncoder.
+    Now perfectly aligned with legacy Spring Security (10 rounds, $2a$ format).
     """
     
     @staticmethod
