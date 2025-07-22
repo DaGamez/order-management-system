@@ -17,7 +17,7 @@ python-multipart==0.0.6
 httpx==0.25.2
 
 # Environment and configuration
-python-dotenv==1.0.0
+python-dotenv==1.0.1
 
 # Development dependencies (optional)
 pytest==7.4.3
