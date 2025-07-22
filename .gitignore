@@ -28,3 +28,6 @@ order-management-system-legacy/.classpath
 
 # VS Code Counter
 .VSCodeCounter/
+order-management-system-modernized/user-management/venv/*
+order-management-system-modernized/user-management/__pycache__/*
+order-management-system-modernized/user-management/__pycache__/api.cpython-310.pyc
