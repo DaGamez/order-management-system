@@ -328,23 +328,33 @@ async def http_exception_handler(request, exc: HTTPException):
     """
     Global HTTP exception handler.
     """
-    return {
-        "message": exc.detail,
-        "timestamp": datetime.utcnow(),
-        "status": exc.status_code
-    }
+    from fastapi.responses import JSONResponse
+    
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "message": exc.detail,
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "status": exc.status_code
+        }
+    )
 
 @app.exception_handler(Exception)
 async def general_exception_handler(request, exc: Exception):
     """
     Global exception handler for unhandled exceptions.
     """
+    from fastapi.responses import JSONResponse
+    
     logger.error(f"Unhandled exception: {exc}")
-    return {
-        "message": "Internal server error",
-        "timestamp": datetime.utcnow(),
-        "status": 500
-    }
+    return JSONResponse(
+        status_code=500,
+        content={
+            "message": "Internal server error",
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "status": 500
+        }
+    )
 
 # Main entry point
 def main():
