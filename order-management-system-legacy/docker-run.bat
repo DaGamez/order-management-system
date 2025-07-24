@@ -33,8 +33,8 @@ echo ===================================
 echo Order Management System is starting!
 echo ===================================
 echo.
-echo Web UI: http://localhost:8080
-echo API: http://localhost:8080/api/products
+echo Web UI: http://localhost:5000
+echo API: http://localhost:5000/api/products
 echo.
 echo To view logs: docker-compose logs -f
 echo To stop: docker-compose down

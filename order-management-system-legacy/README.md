@@ -67,9 +67,11 @@ A comprehensive Order Management System application built using Spring Boot and 
 
 ## Docker Deployment
 
-For containerized deployment using Docker and Docker Compose:
+### Local Development with Docker
 
-### Quick Start
+For local containerized deployment using Docker and Docker Compose:
+
+#### Quick Start
 
 1. **Run the application with Docker**
 
@@ -84,8 +86,8 @@ For containerized deployment using Docker and Docker Compose:
 
 2. **Access the application**
 
-   - Web UI: http://localhost:8080/
-   - API: http://localhost:8080/api/products
+   - Web UI: http://localhost:5000/
+   - API: http://localhost:5000/api/products
    - MySQL: localhost:3307 (external port)
 
 3. **Stop the application**
@@ -98,42 +100,88 @@ For containerized deployment using Docker and Docker Compose:
    docker-compose down
    ```
 
-### Docker Services
+### AWS Elastic Beanstalk Deployment
 
-The Docker setup includes:
+For production deployment on AWS Elastic Beanstalk with external MariaDB:
 
-- **MySQL 8.0**: Database server with persistent volume
-  - Port: 3307 (external), 3306 (internal)
-  - Database: `order_management_system_db`
-  - User: `appuser` / Password: `apppassword`
-  - Root Password: `rootpassword`
+#### Prerequisites
+
+1. **AWS RDS MariaDB Instance**
+   - Create a MariaDB instance in AWS RDS
+   - Note the endpoint, username, and password
+   - Ensure the security group allows connections from Beanstalk
+
+2. **AWS Elastic Beanstalk Application**
+   - Create a new Beanstalk application
+   - Choose "Docker" as the platform
+
+#### Deployment Steps
+
+1. **Build deployment package**
+
+   ```bash
+   # Windows
+   aws-deploy.bat
+   ```
+
+2. **Configure Environment Variables in Beanstalk**
+
+   Set these environment variables in your Beanstalk environment:
+   
+   ```
+   DB_URL=jdbc:mariadb://your-rds-endpoint.region.rds.amazonaws.com:3306/order_management_system_db?useSSL=true&serverTimezone=UTC
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   AWS_REGION=your-aws-region
+   SERVER_PORT=5000
+   ADMIN_USERNAME=your_admin_user
+   ADMIN_PASSWORD=your_admin_password
+   ```
+
+3. **Deploy to Beanstalk**
+   - Upload the `deployment-package` folder as a ZIP file
+   - Deploy to your Beanstalk environment
+
+4. **Access your application**
+   - Web UI: http://your-beanstalk-url/
+   - API: http://your-beanstalk-url/api/products
+
+#### AWS Configuration
+
+The application is configured for AWS with:
+- **Port 5000**: Standard Beanstalk port
+- **Health Checks**: Available at `/actuator/health`
+- **MariaDB Support**: Compatible with AWS RDS MariaDB
+- **Security**: Non-root user in container
+- **Logging**: CloudWatch integration
+- **Auto-scaling**: Configured for t3.small instances
+
+### Docker Services (Local Development)
+
+The local Docker setup includes:
 
 - **Spring Boot App**: Order Management System
-  - Port: 8080
-  - Health Check: http://localhost:8080/actuator/health
-  - Profile: `docker`
+  - Port: 5000
+  - Health Check: http://localhost:5000/actuator/health
+  - Profile: `docker` (local) or `aws` (production)
 
 ### Docker Commands
 
 ```bash
-# Build and start services
+# Build and start services (local)
 docker-compose up --build -d
 
 # View logs
 docker-compose logs -f
 
-# View specific service logs
-docker-compose logs -f app
-docker-compose logs -f mysql
-
 # Stop services
 docker-compose down
 
-# Stop and remove volumes
-docker-compose down -v
+# Build for AWS deployment
+aws-deploy.bat
 
-# Rebuild without cache
-docker-compose build --no-cache
+# Test locally with AWS profile
+docker run -e SPRING_PROFILES_ACTIVE=aws -p 5000:5000 order-management-system
 ```
 
 ## API Endpoints

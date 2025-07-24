@@ -37,6 +37,13 @@ mvnw
 mvnw.cmd
 
 # Docker files (not needed inside container)
-Dockerfile
 docker-compose.yml
 .dockerignore
+
+# AWS deployment files
+deployment-package/
+.ebextensions/
+aws-deploy.bat
+
+# Local database files (not needed for AWS)
+docker/
