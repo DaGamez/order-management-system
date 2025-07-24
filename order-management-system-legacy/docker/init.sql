@@ -1,16 +1,11 @@
--- Database initialization script
--- This script will be executed when the MySQL container starts for the first time
+-- Database initialization script for XAMPP MySQL
+-- This script is not used when connecting to XAMPP MySQL
+-- The application will automatically create the database and tables
 
-USE order_management_system_db;
+-- Note: When using XAMPP MySQL, the database 'order_management_system_db' 
+-- will be created automatically due to the 'createDatabaseIfNotExist=true' parameter
 
--- Create tables if they don't exist (Spring Boot will handle this with JPA)
--- This script can be used for initial data seeding
+-- Optional: You can manually create the database in phpMyAdmin if preferred:
+-- CREATE DATABASE IF NOT EXISTS order_management_system_db;
 
--- Optional: Insert default data
--- INSERT INTO product (name, price, description) VALUES 
--- ('Sample Product 1', 29.99, 'This is a sample product'),
--- ('Sample Product 2', 49.99, 'This is another sample product');
-
--- Grant additional permissions if needed
-GRANT ALL PRIVILEGES ON order_management_system_db.* TO 'appuser'@'%';
-FLUSH PRIVILEGES;
+-- The Spring Boot application will handle table creation via JPA/Hibernate

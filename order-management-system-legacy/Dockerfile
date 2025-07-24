@@ -17,12 +17,12 @@ RUN addgroup -g 1001 -S appgroup && \
 
 USER appuser
 
-# Expose port 5000 (Beanstalk default)
+# Expose port 5000 (AWS Beanstalk port)
 EXPOSE 5000
 
 # Add healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
   CMD curl -f http://localhost:5000/actuator/health || exit 1
 
-# Run the application with memory settings suitable for Beanstalk
-ENTRYPOINT ["java", "-Xmx512m", "-Xms256m", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]
+# Run the application
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]

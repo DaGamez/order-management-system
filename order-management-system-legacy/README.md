@@ -67,9 +67,83 @@ A comprehensive Order Management System application built using Spring Boot and 
 
 ## Docker Deployment
 
-### Local Development with Docker
+### Local Development with Docker (connecting to XAMPP MySQL)
 
-For local containerized deployment using Docker and Docker Compose:
+For containerized deployment using Docker while connecting to your local XAMPP MySQL database:
+
+#### Prerequisites
+
+1. **XAMPP with MySQL running**
+   - Start XAMPP Control Panel
+   - Start MySQL service (port 3306)
+   - Ensure MySQL is accessible (no firewall blocking)
+
+#### Quick Start
+
+1. **Test XAMPP connection (optional)**
+
+   ```bash
+   # Windows - test if Docker can connect to XAMPP MySQL
+   test-xampp-connection.bat
+   ```
+
+2. **Run the application with Docker**
+
+   ```bash
+   # Windows
+   docker-run.bat
+   
+   # Or manually
+   mvn clean package -DskipTests
+   docker-compose up --build -d
+   ```
+
+3. **Access the application**
+
+   - Web UI: http://localhost:8080/
+   - API: http://localhost:8080/api/products
+   - Database: Connected to XAMPP MySQL on localhost:3306
+
+4. **Stop the application**
+
+   ```bash
+   # Windows
+   docker-stop.bat
+   
+   # Or manually
+   docker-compose down
+   ```
+
+#### Configuration Notes
+
+- **Database Connection**: Uses `host.docker.internal:3306` to connect to XAMPP MySQL
+- **Database Name**: `order_management_system_db` (created automatically)
+- **MySQL User**: `root` (default XAMPP user)
+- **MySQL Password**: Empty by default (XAMPP default)
+
+#### Custom MySQL Configuration
+
+If your XAMPP MySQL has a password or custom settings:
+
+1. Copy `docker-compose.override.yml.example` to `docker-compose.override.yml`
+2. Edit the file with your MySQL password:
+   ```yaml
+   services:
+     app:
+       environment:
+         MYSQL_PASSWORD: your_mysql_password
+   ```
+
+#### Troubleshooting
+
+**Connection Issues:**
+- Ensure XAMPP MySQL is running on port 3306
+- Check Windows Firewall isn't blocking port 3306
+- Try running `test-xampp-connection.bat` to diagnose issues
+
+**Database Issues:**
+- The database `order_management_system_db` will be created automatically
+- If you prefer a different database name, modify the `SPRING_DATASOURCE_URL` in docker-compose.yml
 
 #### Quick Start
 

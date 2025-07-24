@@ -1,0 +1,20 @@
+# Docker Compose override file
+# Use this if your XAMPP MySQL has a password
+# Copy this file to docker-compose.override.yml and modify as needed
+
+version: '3.8'
+
+services:
+  app:
+    environment:
+      # If your XAMPP MySQL has a password, uncomment and set it here:
+      # MYSQL_PASSWORD: your_mysql_password
+      
+      # If you want to use a different database name:
+      # SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/your_db_name?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      
+      # If you want to use a different MySQL user:
+      # SPRING_DATASOURCE_USERNAME: your_mysql_user
+      
+      # Example for debugging connection issues:
+      # LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_JDBC: DEBUG
