@@ -1,3 +1,5 @@
+#docker build with tag latest
+# docker build -t user-management:latest .
 # Use Python 3.11 slim image
 FROM python:3.11-slim
 
