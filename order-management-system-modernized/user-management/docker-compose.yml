@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  user-management:
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=3306
+      - DB_NAME=order_management_system_db
+      - DB_USER=root
+      - DB_PASSWORD=
+      - JWT_SECRET_KEY=your-production-secret-key-change-this
+      - HOST=0.0.0.0
+      - PORT=8001
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
