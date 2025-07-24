@@ -27,7 +27,8 @@ A comprehensive Order Management System application built using Spring Boot and 
 
 - JDK 11 or higher
 - Maven
-- MySQL Server
+- MySQL Server (for local development)
+- Docker and Docker Compose (for containerized deployment)
 
 ## Setup Instructions
 
@@ -63,6 +64,77 @@ A comprehensive Order Management System application built using Spring Boot and 
 
    - Web UI: http://localhost:8080/
    - API: http://localhost:8080/api/products
+
+## Docker Deployment
+
+For containerized deployment using Docker and Docker Compose:
+
+### Quick Start
+
+1. **Run the application with Docker**
+
+   ```bash
+   # Windows
+   docker-run.bat
+   
+   # Or manually
+   mvn clean package -DskipTests
+   docker-compose up --build -d
+   ```
+
+2. **Access the application**
+
+   - Web UI: http://localhost:8080/
+   - API: http://localhost:8080/api/products
+   - MySQL: localhost:3307 (external port)
+
+3. **Stop the application**
+
+   ```bash
+   # Windows
+   docker-stop.bat
+   
+   # Or manually
+   docker-compose down
+   ```
+
+### Docker Services
+
+The Docker setup includes:
+
+- **MySQL 8.0**: Database server with persistent volume
+  - Port: 3307 (external), 3306 (internal)
+  - Database: `order_management_system_db`
+  - User: `appuser` / Password: `apppassword`
+  - Root Password: `rootpassword`
+
+- **Spring Boot App**: Order Management System
+  - Port: 8080
+  - Health Check: http://localhost:8080/actuator/health
+  - Profile: `docker`
+
+### Docker Commands
+
+```bash
+# Build and start services
+docker-compose up --build -d
+
+# View logs
+docker-compose logs -f
+
+# View specific service logs
+docker-compose logs -f app
+docker-compose logs -f mysql
+
+# Stop services
+docker-compose down
+
+# Stop and remove volumes
+docker-compose down -v
+
+# Rebuild without cache
+docker-compose build --no-cache
+```
 
 ## API Endpoints
 

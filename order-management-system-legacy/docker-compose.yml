@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: order-management-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: order_management_system_db
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - order-management-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  app:
+    build: .
+    container_name: order-management-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/order_management_system_db?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: appuser
+      SPRING_DATASOURCE_PASSWORD: apppassword
+    ports:
+      - "8080:8080"
+    networks:
+      - order-management-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+
+networks:
+  order-management-network:
+    driver: bridge
