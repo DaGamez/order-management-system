@@ -1,0 +1,49 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# IDE files
+.idea
+.vscode
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts (except the final JAR)
+target/classes
+target/test-classes
+target/generated-sources
+target/generated-test-sources
+target/maven-archiver
+target/maven-status
+target/surefire-reports
+
+# Keep only the final JAR
+!target/*.jar
+
+# Logs
+logs/
+*.log
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Docker files (not needed inside container)
+docker-compose.yml
+.dockerignore
+
+# AWS deployment files
+deployment-package/
+.ebextensions/
+aws-deploy.bat
+
+# Local database files (not needed for AWS)
+docker/

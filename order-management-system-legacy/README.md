@@ -27,7 +27,8 @@ A comprehensive Order Management System application built using Spring Boot and 
 
 - JDK 11 or higher
 - Maven
-- MySQL Server
+- MySQL Server (for local development)
+- Docker and Docker Compose (for containerized deployment)
 
 ## Setup Instructions
 
@@ -63,6 +64,199 @@ A comprehensive Order Management System application built using Spring Boot and 
 
    - Web UI: http://localhost:8080/
    - API: http://localhost:8080/api/products
+
+## Docker Deployment
+
+### Local Development with Docker (connecting to XAMPP MySQL)
+
+For containerized deployment using Docker while connecting to your local XAMPP MySQL database:
+
+#### Prerequisites
+
+1. **XAMPP with MySQL running**
+   - Start XAMPP Control Panel
+   - Start MySQL service (port 3306)
+   - Ensure MySQL is accessible (no firewall blocking)
+
+#### Quick Start
+
+1. **Test XAMPP connection (optional)**
+
+   ```bash
+   # Windows - test if Docker can connect to XAMPP MySQL
+   test-xampp-connection.bat
+   ```
+
+2. **Run the application with Docker**
+
+   ```bash
+   # Windows
+   docker-run.bat
+   
+   # Or manually
+   mvn clean package -DskipTests
+   docker-compose up --build -d
+   ```
+
+3. **Access the application**
+
+   - Web UI: http://localhost:8080/
+   - API: http://localhost:8080/api/products
+   - Database: Connected to XAMPP MySQL on localhost:3306
+
+4. **Stop the application**
+
+   ```bash
+   # Windows
+   docker-stop.bat
+   
+   # Or manually
+   docker-compose down
+   ```
+
+#### Configuration Notes
+
+- **Database Connection**: Uses `host.docker.internal:3306` to connect to XAMPP MySQL
+- **Database Name**: `order_management_system_db` (created automatically)
+- **MySQL User**: `root` (default XAMPP user)
+- **MySQL Password**: Empty by default (XAMPP default)
+
+#### Custom MySQL Configuration
+
+If your XAMPP MySQL has a password or custom settings:
+
+1. Copy `docker-compose.override.yml.example` to `docker-compose.override.yml`
+2. Edit the file with your MySQL password:
+   ```yaml
+   services:
+     app:
+       environment:
+         MYSQL_PASSWORD: your_mysql_password
+   ```
+
+#### Troubleshooting
+
+**Connection Issues:**
+- Ensure XAMPP MySQL is running on port 3306
+- Check Windows Firewall isn't blocking port 3306
+- Try running `test-xampp-connection.bat` to diagnose issues
+
+**Database Issues:**
+- The database `order_management_system_db` will be created automatically
+- If you prefer a different database name, modify the `SPRING_DATASOURCE_URL` in docker-compose.yml
+
+#### Quick Start
+
+1. **Run the application with Docker**
+
+   ```bash
+   # Windows
+   docker-run.bat
+   
+   # Or manually
+   mvn clean package -DskipTests
+   docker-compose up --build -d
+   ```
+
+2. **Access the application**
+
+   - Web UI: http://localhost:5000/
+   - API: http://localhost:5000/api/products
+   - MySQL: localhost:3307 (external port)
+
+3. **Stop the application**
+
+   ```bash
+   # Windows
+   docker-stop.bat
+   
+   # Or manually
+   docker-compose down
+   ```
+
+### AWS Elastic Beanstalk Deployment
+
+For production deployment on AWS Elastic Beanstalk with external MariaDB:
+
+#### Prerequisites
+
+1. **AWS RDS MariaDB Instance**
+   - Create a MariaDB instance in AWS RDS
+   - Note the endpoint, username, and password
+   - Ensure the security group allows connections from Beanstalk
+
+2. **AWS Elastic Beanstalk Application**
+   - Create a new Beanstalk application
+   - Choose "Docker" as the platform
+
+#### Deployment Steps
+
+1. **Build deployment package**
+
+   ```bash
+   # Windows
+   aws-deploy.bat
+   ```
+
+2. **Configure Environment Variables in Beanstalk**
+
+   Set these environment variables in your Beanstalk environment:
+   
+   ```
+   DB_URL=jdbc:mariadb://your-rds-endpoint.region.rds.amazonaws.com:3306/order_management_system_db?useSSL=true&serverTimezone=UTC
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   AWS_REGION=your-aws-region
+   SERVER_PORT=5000
+   ADMIN_USERNAME=your_admin_user
+   ADMIN_PASSWORD=your_admin_password
+   ```
+
+3. **Deploy to Beanstalk**
+   - Upload the `deployment-package` folder as a ZIP file
+   - Deploy to your Beanstalk environment
+
+4. **Access your application**
+   - Web UI: http://your-beanstalk-url/
+   - API: http://your-beanstalk-url/api/products
+
+#### AWS Configuration
+
+The application is configured for AWS with:
+- **Port 5000**: Standard Beanstalk port
+- **Health Checks**: Available at `/actuator/health`
+- **MariaDB Support**: Compatible with AWS RDS MariaDB
+- **Security**: Non-root user in container
+- **Logging**: CloudWatch integration
+- **Auto-scaling**: Configured for t3.small instances
+
+### Docker Services (Local Development)
+
+The local Docker setup includes:
+
+- **Spring Boot App**: Order Management System
+  - Port: 5000
+  - Health Check: http://localhost:5000/actuator/health
+  - Profile: `docker` (local) or `aws` (production)
+
+### Docker Commands
+
+```bash
+# Build and start services (local)
+docker-compose up --build -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+
+# Build for AWS deployment
+aws-deploy.bat
+
+# Test locally with AWS profile
+docker run -e SPRING_PROFILES_ACTIVE=aws -p 5000:5000 order-management-system
+```
 
 ## API Endpoints
 
