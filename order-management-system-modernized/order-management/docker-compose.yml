@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  order-management:
+    build: .
+    ports:
+      - "8002:8002"
+    env_file:
+      - .env
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
